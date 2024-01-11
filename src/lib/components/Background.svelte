@@ -1,10 +1,10 @@
 <script>
   export let w
   export let h
+  export let contentMargin
 
-  const svgMargin = 50
-  $: svgWidth = w - 2*svgMargin
-  $: svgHeight = h - 2*svgMargin
+  $: svgWidth = w - 2*contentMargin
+  $: svgHeight = h - 2*contentMargin
 
   const years = [2023,2024,2025,2026,2027]
   const quarters = ['Q1','Q2','Q3','Q4']
@@ -23,7 +23,7 @@
 
 <div class='background'>
   <svg>
-    <g transform='translate({svgMargin},{svgMargin})'>
+    <g transform='translate({contentMargin},{contentMargin})'>
       {#each years as year,i}
         <g class='jaar'>
           {#each quarters as quarter,j}
@@ -75,6 +75,8 @@
 
   .background{
     height:100%;
+    width:100%;
+    position: absolute;
   }
   .quartertext{
     font-weight: 700;
