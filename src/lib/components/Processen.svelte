@@ -26,7 +26,7 @@
 
   function mouseOverProces(proces){
     selectAll('.proces-g')
-      .style('opacity', 0.5)
+      .style('opacity', 0.3)
     select('.proces-g-' + proces['procID'])
       .style('opacity', 1)
   }
@@ -85,7 +85,7 @@
   }
 
   .proces-g{
-    transition:all 0.5s
+    transition:all 0.8s
   }
 </style>
 
