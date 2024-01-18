@@ -1,5 +1,5 @@
 <script>
-  import { scaleTime } from "d3";
+  import { scaleTime, scaleBand } from "d3";
 
   export let data
   export let w
@@ -12,30 +12,41 @@
   $: timeScale = scaleTime()
     .domain([new Date("2023-01-01"), new Date("2027-07-01")])
     .range([0, innerWidth])
-  
-  $: console.log(timeScale(new Date("2023-01")))
 
+  const bandPadding = 7
+  $: bandStep = innerHeight / data.proces.length
 
 </script>
 
 <svg class='procesSVG'>
   <g transform='translate({margin.left},{margin.top})'>
-    {#each data.proces as proces}
-      <rect 
-        x={timeScale(new Date(proces['Datum start']+'-01'))}
-        y={0} 
-        height='22'
-        width={timeScale(new Date(proces['Datum eind']+'-30')) - timeScale(new Date(proces['Datum start']+'-01')) - 2} 
-        fill='#027CC4'
-        stroke='black' />
-      <text 
-        x={timeScale(new Date(proces['Datum start']+'-01')) + (timeScale(new Date(proces['Datum eind']+'-30')) - timeScale(new Date(proces['Datum start']+'-01')) - 2)/2}
-        y='1.2em'
-        font-size='13'
-        text-anchor='middle'
-        style='fill:white'>
-        {proces['Korte titel']}
-      </text>
+    {#each data.proces as proces, i}
+      <g transform='translate({0},{i*bandStep})'>
+        <rect 
+          x={timeScale(new Date(proces['Datum start']+'-01'))}
+          y={0} 
+          height='22'
+          width={timeScale(new Date(proces['Datum eind']+'-30')) - timeScale(new Date(proces['Datum start']+'-01')) - 2} 
+          fill='#027CC4'
+          stroke='black' />
+        <rect 
+          x={0}
+          y={0}
+          width='16.5'
+          height='16.5'
+          fill='white'
+          stroke='black'
+          transform='translate({timeScale(new Date(proces['Datum eind']+'-30'))-1},0) rotate(45)'
+        />
+        <text 
+          x={timeScale(new Date(proces['Datum start']+'-01')) + (timeScale(new Date(proces['Datum eind']+'-30')) - timeScale(new Date(proces['Datum start']+'-01')) - 2)/2}
+          y='1.2em'
+          font-size='13'
+          text-anchor='middle'
+          style='fill:white'>
+          {proces['Korte titel']}
+        </text>
+      </g>
     {/each}
   </g>
 </svg>
