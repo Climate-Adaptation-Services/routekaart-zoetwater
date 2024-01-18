@@ -5,7 +5,7 @@
   export let w
   export let h
 
-  const margin = {top:30, left:0, bottom:30, right:0}
+  const margin = {top:20, left:0, bottom:30, right:0}
   $: innerHeight = h - margin.top - margin.bottom
   $: innerWidth = w - margin.left - margin.right
 
@@ -16,6 +16,14 @@
   const bandPadding = 7
   $: bandStep = innerHeight / data.proces.length 
 
+  const procesHeight = 22
+
+  const procesColors = {
+    'Landelijk team': '#0070C0',
+    "Regio": '#C00001',
+    "Samen": '#00B050'
+  }
+
 </script>
 
 <svg class='procesSVG'>
@@ -25,19 +33,21 @@
         <rect 
           x={timeScale(new Date(proces['Datum start']+'-01'))}
           y={0} 
-          height='22'
+          height={procesHeight}
           width={timeScale(new Date(proces['Datum eind']+'-30')) - timeScale(new Date(proces['Datum start']+'-01')) - 2} 
-          fill='#027CC4'
+          fill={procesColors[proces['Wie']]}
           stroke='black' />
-        <rect 
-          x={0}
-          y={0}
-          width='16.5'
-          height='16.5'
-          fill='white'
-          stroke='black'
-          transform='translate({timeScale(new Date(proces['Datum eind']+'-30'))-1},0) rotate(45)'
-        />
+        {#each data.product.filter(product => product['procID'] === proces['procID']) as product}
+          <rect 
+            x={0}
+            y={0}
+            width={22*Math.sin(0.25*Math.PI)}
+            height={22*Math.sin(0.25*Math.PI)}
+            fill='white'
+            stroke='black'
+            transform='translate({timeScale(new Date(product['Datum']+'-30'))-1},0) rotate(45)'
+          />
+        {/each}
         <text 
           x={timeScale(new Date(proces['Datum start']+'-01')) + (timeScale(new Date(proces['Datum eind']+'-30')) - timeScale(new Date(proces['Datum start']+'-01')) - 2)/2}
           y='1.2em'
