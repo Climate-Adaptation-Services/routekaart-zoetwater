@@ -32,11 +32,16 @@
     <h4>
       {proces['Volledige titel']}
     </h4>
+    <p>
+      {proces['Korte beschrijving']}
+    </p>
+    <hr>
+
   </div>
   {#if tooltipWidth > 0}
     <svg>
       <g class='tooltip' transform='translate(0,{procesHeight})'
-        stroke='black' stroke-dasharray="7 7">
+        stroke='black' stroke-dasharray="7 3">
         <line 
           x1={0}
           x2={offsetX} 
@@ -65,7 +70,7 @@
 
 <style>
   path{
-    fill:antiquewhite;
+    fill:rgb(246, 244, 242);
   }
 
   .tooltip{
@@ -74,6 +79,7 @@
     pointer-events: none;
     width:800px;
     height:800px;
+    transition: all 1s;
   }
 
   .tooltipContent{
@@ -83,11 +89,18 @@
     flex-direction: column;
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    padding:25px;
+    max-width: 400px;
+    text-align: center;
   }
 
   svg{
     width:100%;
     height:100%;
+  }
+
+  h4{
+    margin-top:0px;
   }
 
 </style>
