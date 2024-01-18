@@ -1,5 +1,8 @@
 <script>
   import { scaleTime, select, selectAll } from "d3";
+  import { procesHover } from "$lib/stores";
+
+  import Tooltip from "./Tooltip.svelte";
 
   export let data
   export let w
@@ -25,15 +28,11 @@
   }
 
   function mouseOverProces(proces){
-    selectAll('.proces-g')
-      .style('opacity', 0.3)
-    select('.proces-g-' + proces['procID'])
-      .style('opacity', 1)
+    procesHover.set(proces['procID'])
   }
 
   function mouseOutProces(){
-    selectAll('.proces-g')
-      .style('opacity', 1)
+    procesHover.set(null)
   }
 
 </script>
@@ -41,7 +40,8 @@
 <svg class='procesSVG'>
   <g transform='translate({margin.left},{margin.top})'>
     {#each data.proces as proces, i}
-      <g transform='translate({0},{i*bandStep})' class={'proces-g proces-g-' + proces['procID']}>
+      <g transform='translate({0},{i*bandStep})' class={'proces-g proces-g-' + proces['procID']}
+        opacity={($procesHover && $procesHover !== proces['procID']) ? 0.2 : 1}>
         <rect 
           class={'proces-' + proces['procID']}
           x={timeScale(new Date(proces['Datum start']+'-01'))}
@@ -77,6 +77,10 @@
     {/each}
   </g>
 </svg>
+{#if $procesHover !== null}
+  <Tooltip {timeScale} {procesHeight} {bandStep} {data} {margin} />
+{/if}
+
 
 <style>
   svg{
@@ -85,7 +89,7 @@
   }
 
   .proces-g{
-    transition:all 0.8s
+    transition:all 0.8s;
   }
 </style>
 
