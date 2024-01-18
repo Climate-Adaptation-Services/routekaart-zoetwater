@@ -1,5 +1,5 @@
 <script>
-  import { scaleTime, scaleBand } from "d3";
+  import { scaleTime, select, selectAll } from "d3";
 
   export let data
   export let w
@@ -24,21 +24,37 @@
     "Samen": '#00B050'
   }
 
+  function mouseOverProces(proces){
+    selectAll('.proces-g')
+      .style('opacity', 0.5)
+    select('.proces-g-' + proces['procID'])
+      .style('opacity', 1)
+  }
+
+  function mouseOutProces(){
+    selectAll('.proces-g')
+      .style('opacity', 1)
+  }
+
 </script>
 
 <svg class='procesSVG'>
   <g transform='translate({margin.left},{margin.top})'>
     {#each data.proces as proces, i}
-      <g transform='translate({0},{i*bandStep})'>
+      <g transform='translate({0},{i*bandStep})' class={'proces-g proces-g-' + proces['procID']}>
         <rect 
+          class={'proces-' + proces['procID']}
           x={timeScale(new Date(proces['Datum start']+'-01'))}
           y={0} 
           height={procesHeight}
           width={timeScale(new Date(proces['Datum eind']+'-30')) - timeScale(new Date(proces['Datum start']+'-01')) - 2} 
           fill={procesColors[proces['Wie']]}
-          stroke='black' />
-        {#each data.product.filter(product => product['procID'] === proces['procID']) as product}
+          stroke='black' 
+          on:mouseover={() => mouseOverProces(proces)}
+          on:mouseout={() => mouseOutProces(proces)}/>
+        {#each data.product.filter(product => product['procID'] === proces['procID']) as product, j}
           <rect 
+            class={'product-' + product['prodID'] + '-' + j}
             x={0}
             y={0}
             width={22*Math.sin(0.25*Math.PI)}
@@ -53,7 +69,8 @@
           y='1.2em'
           font-size='13'
           text-anchor='middle'
-          style='fill:white'>
+          style='fill:white'
+          pointer-events='none'>
           {proces['Korte titel']}
         </text>
       </g>
@@ -65,6 +82,10 @@
   svg{
     width:100%;
     height:100%;
+  }
+
+  .proces-g{
+    transition:all 0.5s
   }
 </style>
 
