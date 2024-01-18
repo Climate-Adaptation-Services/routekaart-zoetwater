@@ -13,8 +13,14 @@
 
   const procesWidth = timeScale(new Date(proces['Datum eind']+'-30'))-timeScale(new Date(proces['Datum start']+'-01'))
 
-  const offsetX = 20;
-  const offsetY = 80;
+  const tooltipLocation = (procesIndex > 10)
+    ? 'top'
+    : 'bottom'
+
+  let offsetX = 0;
+  let offsetY = 0;
+  let divOffsetX = 0;
+  let divOffsetY = 0;
 
   let tooltipWidth = 0;
   let tooltipHeight = 0;
@@ -22,13 +28,29 @@
     const tooltipContentBox = document.getElementsByClassName('tooltipContent')[0].getBoundingClientRect()
     tooltipWidth = tooltipContentBox.width
     tooltipHeight = tooltipContentBox.height
+
+    if(tooltipLocation === 'bottom'){
+      offsetX = 20
+      offsetY = 60
+
+      divOffsetX = 0;
+      divOffsetY = 0
+    }else{
+      offsetX = -20
+      offsetY = -40
+
+      divOffsetX = offsetX - 140
+      divOffsetY = -tooltipHeight + offsetY
+    }
   })
 
 </script>
 
-<div class='tooltip' style='left:{timeScale(new Date(proces['Datum start']+'-01'))}px; top:{procesIndex*bandStep - bandStep + procesHeight}px'>
+<div class='tooltip' 
+  style='transform:translate({divOffsetX}px,{divOffsetY}px);
+    left:{timeScale(new Date(proces['Datum start']+'-01'))}px; top:{procesIndex*bandStep - bandStep + procesHeight}px'>
 
-  <div class='tooltipContent' style='transform:translate({offsetX}px,{offsetY+procesHeight}px)'>
+  <div class='tooltipContent' style='transform:translate({(tooltipLocation === 'bottom') ? offsetX : 0}px,{(tooltipLocation === 'bottom') ? offsetY : 0}px)' >
     <h4>
       {proces['Volledige titel']}
     </h4>
@@ -36,27 +58,26 @@
       {proces['Korte beschrijving']}
     </p>
     <hr>
-
   </div>
+
   {#if tooltipWidth > 0}
     <svg>
-      <g class='tooltip' transform='translate(0,{procesHeight})'
-        stroke='black' stroke-dasharray="7 3">
+      <g class='tooltip' stroke='black' stroke-dasharray="7 3" transform='translate({-divOffsetX},{-divOffsetY})'>
         <line 
           x1={0}
-          x2={offsetX} 
-          y1={0} 
+          x2={(tooltipLocation === 'bottom') ? offsetX : divOffsetX}
+          y1={(tooltipLocation === 'top') ? 0 : procesHeight} 
           y2={offsetY} 
         />
         <line 
           x1={procesWidth}
-          x2={tooltipWidth + offsetX} 
-          y1={0} 
+          x2={(tooltipLocation === 'bottom') ? tooltipWidth+offsetX : tooltipWidth+divOffsetX}
+          y1={(tooltipLocation === 'top') ? 0 : procesHeight} 
           y2={offsetY} 
         />
         <path 
           d="
-            M{offsetX} {offsetY} 
+            M{(tooltipLocation === 'bottom') ? offsetX : divOffsetX} {(tooltipLocation === 'bottom') ? offsetY : divOffsetY} 
             l{tooltipWidth} 0 
             l0 {tooltipHeight}
             l-{tooltipWidth} 0
@@ -79,7 +100,6 @@
     pointer-events: none;
     width:800px;
     height:800px;
-    transition: all 1s;
   }
 
   .tooltipContent{
@@ -90,7 +110,7 @@
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     padding:25px;
-    max-width: 400px;
+    max-width: 450px;
     text-align: center;
   }
 
