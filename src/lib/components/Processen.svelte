@@ -14,7 +14,7 @@
     .range([0, innerWidth])
 
   const bandPadding = 7
-  $: bandStep = innerHeight / data.proces.length
+  $: bandStep = innerHeight / data.proces.length 
 
 </script>
 
