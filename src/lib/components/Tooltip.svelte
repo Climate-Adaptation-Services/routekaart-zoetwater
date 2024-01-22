@@ -11,6 +11,8 @@
   const proces = data.proces.filter(d => d['procID'] === $procesHover)[0]
   const procesIndex = parseInt($procesHover.split('proc')[1])
 
+  const product = data.product.filter(prod => prod['procID'] === proces['procID'])[0]
+
   const procesWidth = timeScale(new Date(proces['Datum eind']+'-30'))-timeScale(new Date(proces['Datum start']+'-01'))
 
   const tooltipLocation = (procesIndex > 10)
@@ -39,7 +41,7 @@
       offsetX = -20
       offsetY = -40
 
-      divOffsetX = offsetX - 140
+      divOffsetX = offsetX - tooltipWidth
       divOffsetY = -tooltipHeight + offsetY
     }
   })
@@ -58,6 +60,19 @@
       {proces['Korte beschrijving']}
     </p>
     <hr>
+    <div class='proces-extra-info'>
+      <img class='extra-info-imgs' src="/images/schedule.png" />
+      <p>{proces['Datum start'] + ' -- ' + proces['Datum eind']}</p>
+    </div>
+    <div class='proces-extra-info'>
+      <img class='extra-info-imgs' src="/images/team.png" />
+      <p>{proces['Wie']}</p>
+    </div>
+    <div class='proces-extra-info'>
+      <img class='extra-info-imgs' src="/images/goal.png" />
+      <p>{product['Volledige omschrijving']}</p>
+    </div>
+
   </div>
 
   {#if tooltipWidth > 0}
@@ -121,6 +136,27 @@
 
   h4{
     margin-top:0px;
+  }
+ 
+  hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:rgb(186, 186, 186);
+    height: 1px;
+  }
+
+  .proces-extra-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .extra-info-imgs{
+    width:35px;
+    height:35px;
+    padding-right:10px;
   }
 
 </style>
