@@ -6,6 +6,7 @@
   export let h;
   export let data;
   export let contentMargin
+  export let timeScale
 
   $: contentHeight = h - 2*contentMargin
   $: contentWidth = w - 2*contentMargin

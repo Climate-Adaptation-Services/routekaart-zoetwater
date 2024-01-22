@@ -1,5 +1,4 @@
 <script>
-  import { scaleTime, select, selectAll } from "d3";
   import { procesHover } from "$lib/stores";
 
   import Tooltip from "./Tooltip.svelte";
@@ -7,14 +6,10 @@
   export let data
   export let w
   export let h
+  export let timeScale
 
-  const margin = {top:20, left:0, bottom:30, right:0}
+  const margin = {top:20, bottom:30}
   $: innerHeight = h - margin.top - margin.bottom
-  $: innerWidth = w - margin.left - margin.right
-
-  $: timeScale = scaleTime()
-    .domain([new Date("2023-01-01"), new Date("2027-07-01")])
-    .range([0, innerWidth])
 
   const bandPadding = 7
   $: bandStep = innerHeight / data.proces.length 
@@ -38,7 +33,16 @@
 </script>
 
 <svg class='procesSVG'>
-  <g transform='translate({margin.left},{margin.top})'>
+  <defs>
+    <filter id='glow'>
+      <feGaussianBlur stdDeviation='2.5' result='coloredBlur'/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"></feMergeNode>
+        <feMergeNode in='SourceGraphic'></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+  <g transform='translate({0},{margin.top})'>
     {#each data.proces as proces, i}
       <g transform='translate({0},{i*bandStep})' class={'proces-g proces-g-' + proces['procID']}
         opacity={($procesHover && $procesHover !== proces['procID']) ? 0.2 : 1}>
@@ -49,7 +53,8 @@
           height={procesHeight}
           width={timeScale(new Date(proces['Datum eind']+'-30')) - timeScale(new Date(proces['Datum start']+'-01')) - 2} 
           fill={procesColors[proces['Wie']]}
-          stroke='black' 
+          stroke='none' 
+          style='filter:url(#glow)'
           on:mouseover={() => mouseOverProces(proces)}
           on:mouseout={() => mouseOutProces(proces)}/>
         {#each data.product.filter(product => product['procID'] === proces['procID']) as product, j}
@@ -59,13 +64,15 @@
             y={0}
             width={22*Math.sin(0.25*Math.PI)}
             height={22*Math.sin(0.25*Math.PI)}
-            fill='white'
-            stroke='black'
+            fill='rgb(245,250,240)'
+            style='-webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .3));'
+            stroke='none'
             transform='translate({timeScale(new Date(product['Datum']+'-30'))-1},0) rotate(45)'
           />
         {/each}
         <text 
           x={timeScale(new Date(proces['Datum start']+'-01')) + (timeScale(new Date(proces['Datum eind']+'-30')) - timeScale(new Date(proces['Datum start']+'-01')) - 2)/2}
+          dx={(proces['Korte titel'] === 'Ontwikkelpadenkaarten') ? 60 : 0}
           y='1.2em'
           font-size='13'
           text-anchor='middle'
@@ -78,7 +85,7 @@
   </g>
 </svg>
 {#if $procesHover !== null}
-  <Tooltip {timeScale} {procesHeight} {bandStep} {data} {margin} />
+  <Tooltip {procesHeight} {bandStep} {data} {margin} />
 {/if}
 
 

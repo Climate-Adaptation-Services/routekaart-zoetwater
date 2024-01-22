@@ -2,11 +2,11 @@
   import { procesHover } from "$lib/stores";
   import { onMount } from "svelte";
 
-  export let timeScale
   export let procesHeight
   export let bandStep
   export let data
   export let margin
+  export let timeScale
 
   const proces = data.proces.filter(d => d['procID'] === $procesHover)[0]
   const procesIndex = parseInt($procesHover.split('proc')[1])
@@ -47,7 +47,7 @@
   })
 
   const maand = {
-    '01':'Jan', '02':'Feb', '03':'Maa', '04':'Apr', '05':'Mei', '06':'Juni', '07':'Juli', '08':'Aug', '09':'Sep', '10':'Okt', '11':'Nov', '12':'Dec'
+    '01':'Jan', '02':'Feb', '03':'Maa', '04':'Apr', '05':'Mei', '06':'Jun', '07':'Jul', '08':'Aug', '09':'Sep', '10':'Okt', '11':'Nov', '12':'Dec'
   }
 
 </script>
