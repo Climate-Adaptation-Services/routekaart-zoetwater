@@ -46,6 +46,10 @@
     }
   })
 
+  const maand = {
+    '01':'Jan', '02':'Feb', '03':'Maa', '04':'Apr', '05':'Mei', '06':'Juni', '07':'Juli', '08':'Aug', '09':'Sep', '10':'Okt', '11':'Nov', '12':'Dec'
+  }
+
 </script>
 
 <div class='tooltip' 
@@ -62,7 +66,7 @@
     <hr>
     <div class='proces-extra-info'>
       <img class='extra-info-imgs' src="/images/schedule.png" />
-      <p>{proces['Datum start'] + ' -- ' + proces['Datum eind']}</p>
+      <p>{maand[proces['Datum start'].split('-')[1]] + ' ' + proces['Datum start'].split('-')[0] + ' -- ' + maand[proces['Datum eind'].split('-')[1]] + ' ' + proces['Datum eind'].split('-')[0]}</p>
     </div>
     <div class='proces-extra-info'>
       <img class='extra-info-imgs' src="/images/team.png" />
