@@ -53,7 +53,9 @@
     <g transform='translate({0},{margin.top})'>
       {#each data.proces as proces, i}
         <g transform='translate({0},{i*bandStep})' class={'proces-g proces-g-' + proces['procID']}
-          opacity={($procesHover && $procesHover !== proces['procID']) ? 0.2 : 1}>
+          opacity={(($procesHover && $procesHover !== proces['procID']) || ($productHover && proces['procID'] !== data.product.filter(d => d['prodID'] === $productHover)[0]['procID']))
+            ? 0.2 
+            : 1}>
           <rect 
             class={'proces-' + proces['procID']}
             x={$timeScale(new Date(proces['Datum start']+'-01'))}
