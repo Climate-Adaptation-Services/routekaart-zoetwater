@@ -1,5 +1,5 @@
 <script>
-  import { procesHover, timeScale } from "$lib/stores";
+  import { procesHover, productHover, timeScale } from "$lib/stores";
 
   import Tooltip from "./Tooltip.svelte";
 
@@ -27,6 +27,14 @@
 
   function mouseOutProces(){
     procesHover.set(null)
+  }
+
+  function mouseOverProduct(product){
+    productHover.set(product['prodID'])
+  }
+
+  function mouseOutProduct(){
+    productHover.set(null)
   }
 
 </script>
@@ -68,6 +76,8 @@
               style='-webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .3));'
               stroke='none'
               transform='translate({$timeScale(new Date(product['Datum']+'-30'))-1},0) rotate(45)'
+              on:mouseover={() => mouseOverProduct(product)}
+              on:mouseout={() => mouseOutProduct(product)}
             />
           {/each}
           <text 
@@ -84,7 +94,7 @@
       {/each}
     </g>
   </svg>
-  {#if $procesHover !== null}
+  {#if $procesHover !== null || $productHover !== null}
     <Tooltip {procesHeight} {bandStep} {data} {margin} />
   {/if}
 {/if}

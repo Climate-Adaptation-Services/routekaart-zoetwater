@@ -1,5 +1,5 @@
 <script>
-  import { procesHover } from "$lib/stores";
+  import { procesHover, productHover } from "$lib/stores";
   import { onMount } from "svelte";
   import { timeScale } from "$lib/stores";
 
@@ -8,10 +8,17 @@
   export let data
   export let margin
 
-  const proces = data.proces.filter(d => d['procID'] === $procesHover)[0]
-  const procesIndex = parseInt($procesHover.split('proc')[1])
 
-  const product = data.product.filter(prod => prod['procID'] === proces['procID'])[0]
+  const proces = ($procesHover !== null)
+    ? data.proces.filter(d => d['procID'] === $procesHover)[0]
+    : data.proces.filter(k => k['procID'] === data.product.filter(d => d['prodID'] === $productHover)[0]['procID'])[0]
+  console.log(proces)
+
+  const procesIndex = parseInt(proces['procID'].split('proc')[1])
+
+  const producten = ($procesHover !== null)
+    ? data.product.filter(prod => prod['procID'] === proces['procID'])
+    : data.product.filter(prod => prod['prodID'] === $productHover)
 
   const procesWidth = $timeScale(new Date(proces['Datum eind']+'-30'))-$timeScale(new Date(proces['Datum start']+'-01'))
 
@@ -58,31 +65,35 @@
     left:{$timeScale(new Date(proces['Datum start']+'-01'))}px; top:{procesIndex*bandStep - bandStep + procesHeight}px'>
 
   <div class='tooltipContent' style='transform:translate({(tooltipLocation === 'bottom') ? offsetX : 0}px,{(tooltipLocation === 'bottom') ? offsetY : 0}px)' >
-    <h4>
-      {proces['Volledige titel']}
-    </h4>
-    <p style='font-size:14px'>
-      {proces['Korte beschrijving']}
-    </p>
-    <hr>
-    <div class='proces-extra-info'>
-      <img class='extra-info-imgs' src="/images/schedule.png" />
-      <p>{maand[proces['Datum start'].split('-')[1]] + ' ' + proces['Datum start'].split('-')[0] + ' -- ' + maand[proces['Datum eind'].split('-')[1]] + ' ' + proces['Datum eind'].split('-')[0]}</p>
-    </div>
-    <div class='proces-extra-info'>
-      <img class='extra-info-imgs' src="/images/team.png" />
-      <p>{proces['Wie']}</p>
-    </div>
+    {#if $productHover === null}
+      <h4>
+        {proces['Volledige titel']}
+      </h4>
+      <p style='font-size:14px'>
+        {proces['Korte beschrijving']}
+      </p>
+      <hr>
+      <div class='proces-extra-info'>
+        <img class='extra-info-imgs' src="/images/schedule.png" />
+        <p>{maand[proces['Datum start'].split('-')[1]] + ' ' + proces['Datum start'].split('-')[0] + ' -- ' + maand[proces['Datum eind'].split('-')[1]] + ' ' + proces['Datum eind'].split('-')[0]}</p>
+      </div>
+      <div class='proces-extra-info'>
+        <img class='extra-info-imgs' src="/images/team.png" />
+        <p>{proces['Wie']}</p>
+      </div>
+    {/if}
     <div class='proces-extra-info'>
       <img class='extra-info-imgs' src="/images/goal.png" />
-      <p>{product['Volledige omschrijving']}</p>
+      {#each producten as product}
+        <p>{product['Volledige omschrijving']}</p>
+      {/each}
     </div>
 
   </div>
 
   {#if tooltipWidth > 0}
     <svg>
-      <g class='tooltip' stroke='black' stroke-dasharray="7 3" transform='translate({-divOffsetX},{-divOffsetY})'>
+      <g class='tooltip' stroke='rgb(130,130,130)' stroke-dasharray="7 3" transform='translate({-divOffsetX},{-divOffsetY})'>
         <line 
           x1={0}
           x2={(tooltipLocation === 'bottom') ? offsetX : divOffsetX}
