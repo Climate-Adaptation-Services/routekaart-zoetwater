@@ -1,9 +1,11 @@
 <script>
+  import { timeScale } from "$lib/stores";
+  import { scaleTime } from "d3"
+
   export let w
   export let h
   export let contentMargin
   export let data
-  export let timeScale
 
   $: svgWidth = w - 2*contentMargin
   $: svgHeight = h - 2*contentMargin
@@ -13,23 +15,28 @@
   const quarterpadding = 3
   $: quarterWidth = svgWidth / (4.5*quarters.length)
 
+  $: if(w > 0){
+    timeScale.set(scaleTime()
+      .domain([new Date("2023-01-01"), new Date("2027-07-01")])
+      .range([0, svgWidth]))
+  }
+
   let fasen = []
-  $: if(timeScale){
+  $: if($timeScale){
     data.fases.forEach(fase => {
       fasen.push({
         naam:fase['Titel'], 
-        tijd:[timeScale(new Date(fase['Datum start']+'-01')), timeScale(new Date(fase['Datum eind']+'-30'))]}
+        tijd:[$timeScale(new Date(fase['Datum start']+'-01')), $timeScale(new Date(fase['Datum eind']+'-30'))]}
       )
     });
   }
-
 
   $: console.log(fasen)
 
 </script>
 
-{#if fasen.length > 0}
-  <div class='background'>
+<div class='background'>
+  {#if $timeScale}
     <svg>
       <g transform='translate({contentMargin},{contentMargin})'>
         {#each years as year,i}
@@ -71,8 +78,8 @@
         </defs>
       </g>
     </svg>
-  </div>
-{/if}
+  {/if}
+</div>
 
 <style>
   svg{

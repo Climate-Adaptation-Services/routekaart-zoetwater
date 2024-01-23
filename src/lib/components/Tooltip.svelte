@@ -1,19 +1,19 @@
 <script>
   import { procesHover } from "$lib/stores";
   import { onMount } from "svelte";
+  import { timeScale } from "$lib/stores";
 
   export let procesHeight
   export let bandStep
   export let data
   export let margin
-  export let timeScale
 
   const proces = data.proces.filter(d => d['procID'] === $procesHover)[0]
   const procesIndex = parseInt($procesHover.split('proc')[1])
 
   const product = data.product.filter(prod => prod['procID'] === proces['procID'])[0]
 
-  const procesWidth = timeScale(new Date(proces['Datum eind']+'-30'))-timeScale(new Date(proces['Datum start']+'-01'))
+  const procesWidth = $timeScale(new Date(proces['Datum eind']+'-30'))-$timeScale(new Date(proces['Datum start']+'-01'))
 
   const tooltipLocation = (procesIndex > 10)
     ? 'top'
@@ -54,7 +54,7 @@
 
 <div class='tooltip' 
   style='transform:translate({divOffsetX}px,{divOffsetY}px);
-    left:{timeScale(new Date(proces['Datum start']+'-01'))}px; top:{procesIndex*bandStep - bandStep + procesHeight}px'>
+    left:{$timeScale(new Date(proces['Datum start']+'-01'))}px; top:{procesIndex*bandStep - bandStep + procesHeight}px'>
 
   <div class='tooltipContent' style='transform:translate({(tooltipLocation === 'bottom') ? offsetX : 0}px,{(tooltipLocation === 'bottom') ? offsetY : 0}px)' >
     <h4>
