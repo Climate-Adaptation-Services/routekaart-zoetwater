@@ -82,12 +82,14 @@
         <p>{proces['Wie']}</p>
       </div>
     {/if}
-    <div class='proces-extra-info'>
-      <img class='extra-info-imgs' src="/images/goal.png" />
-      {#each producten as product}
-        <p>{product['Volledige omschrijving']}</p>
-      {/each}
-    </div>
+    {#if producten.length > 0}
+      <div class='proces-extra-info'>
+        <img class='extra-info-imgs' src="/images/goal.png" />
+        {#each producten as product}
+          <p>{product['Volledige omschrijving']}</p>
+        {/each}
+      </div>
+    {/if}
 
   </div>
 

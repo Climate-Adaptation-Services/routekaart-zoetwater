@@ -68,19 +68,22 @@
             on:mouseover={() => mouseOverProces(proces)}
             on:mouseout={() => mouseOutProces(proces)}/>
           {#each data.product.filter(product => product['procID'] === proces['procID']) as product, j}
-            <rect 
-              class={'product-' + product['prodID'] + '-' + j}
-              x={0}
-              y={0}
-              width={22*Math.sin(0.25*Math.PI)}
-              height={22*Math.sin(0.25*Math.PI)}
-              fill='rgb(245,250,240)'
-              style='-webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .3));'
-              stroke='none'
-              transform='translate({$timeScale(new Date(product['Datum']+'-30'))-1},0) rotate(45)'
-              on:mouseover={() => mouseOverProduct(product)}
-              on:mouseout={() => mouseOutProduct(product)}
-            />
+            <g transform='translate({$timeScale(new Date(product['Datum']+'-30'))-1},0) rotate(45)'>
+              <rect 
+                class={'product-' + product['prodID'] + '-' + j}
+                x={0}
+                y={0}
+                width={22*Math.sin(0.25*Math.PI)}
+                height={22*Math.sin(0.25*Math.PI)}
+                fill='rgb(245,250,240)'
+                style='-webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .3));'
+                on:mouseover={() => mouseOverProduct(product)}
+                on:mouseout={() => mouseOutProduct(product)}
+              />
+              {#if $productHover === product['prodID']}
+                <image pointer-events='none' href='/images/goal.png' width={22*Math.sin(0.25*Math.PI)}></image>
+              {/if}
+            </g>
           {/each}
           <text 
             x={$timeScale(new Date(proces['Datum start']+'-01')) + ($timeScale(new Date(proces['Datum eind']+'-30')) - $timeScale(new Date(proces['Datum start']+'-01')) - 2)/2}
