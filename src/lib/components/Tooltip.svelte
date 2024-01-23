@@ -26,6 +26,12 @@
     ? 'top'
     : 'bottom'
 
+  const procesColors = {
+    'Landelijk team': '#daeafc',
+    "Regio": '#fcecef',
+    "Samen": '#e9fce8'
+  }
+
   let offsetX = 0;
   let offsetY = 0;
   let divOffsetX = 0;
@@ -95,6 +101,12 @@
 
   {#if tooltipWidth > 0}
     <svg>
+      <defs>
+        <radialGradient id="grad1" cx="{Math.random()*100}%" cy="{Math.random()*100}%" r="100%" fx="{Math.random()*100}%" fy="{Math.random()*100}%">
+          <stop offset="0%" style="stop-color:rgb(255,255,255)"/>
+          <stop offset="100%" style="stop-color:{procesColors[proces['Wie']]}"/>
+        </radialGradient>
+      </defs>
       <g class='tooltip' stroke='rgb(130,130,130)' stroke-dasharray="7 3" transform='translate({-divOffsetX},{-divOffsetY})'>
         <line 
           x1={0}
@@ -124,7 +136,7 @@
 
 <style>
   path{
-    fill:rgb(246, 244, 242);
+    fill:url(#grad1)
   }
 
   .tooltip{
