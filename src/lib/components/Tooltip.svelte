@@ -32,16 +32,17 @@
     tooltipHeight = tooltipContentBox.height
 
     if(tooltipLocation === 'bottom'){
+      // offset for distance from proces
       offsetX = 20
       offsetY = 60
-
-      divOffsetX = 0;
-      divOffsetY = 0
     }else{
+      // offset for distance from proces
       offsetX = -20
-      offsetY = -40
+      offsetY = -30
 
-      divOffsetX = offsetX - tooltipWidth
+      // offset to fix the position of the tooltip
+      divOffsetX = offsetX
+      if(procesIndex > 13){divOffsetX -= 250}
       divOffsetY = -tooltipHeight + offsetY
     }
   })
@@ -60,7 +61,7 @@
     <h4>
       {proces['Volledige titel']}
     </h4>
-    <p>
+    <p style='font-size:14px'>
       {proces['Korte beschrijving']}
     </p>
     <hr>
@@ -128,7 +129,7 @@
     flex-direction: column;
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    padding:25px;
+    padding:20px;
     max-width: 450px;
     text-align: center;
   }
@@ -140,6 +141,7 @@
 
   h4{
     margin-top:0px;
+    margin-bottom: 10px;
   }
  
   hr {
