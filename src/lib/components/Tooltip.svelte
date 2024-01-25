@@ -27,8 +27,8 @@
     : 'bottom'
 
   const procesColorsLight = {
-    'Landelijk team': '#f0f5fc',
-    "Regio": '#fdf3f3',
+    'Landelijk team': '#d0e4fb',
+    "Regio": '#fce1e2',
     "Samen": '#effaef'
   }
 
@@ -109,7 +109,7 @@
     <svg>
       <defs>
         <radialGradient id="grad1" cx="50%" cy="50%" r="100%" fx="50%" fy="50%">
-          <stop offset="30%" style="stop-color:rgb(255,255,255)"/>
+          <stop offset="40%" style="stop-color:rgb(255,255,255)"/>
           <stop offset="100%" style="stop-color:{procesColorsLight[proces['Wie']]}"/>
         </radialGradient>
       </defs>
@@ -214,6 +214,10 @@
 
   .kortbeschrijving{
     color: #8E8883
+  }
+
+  .proces-extra-info{
+    color:rgb(100,100,100)
   }
 
 </style>
