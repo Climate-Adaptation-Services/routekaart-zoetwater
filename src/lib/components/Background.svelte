@@ -1,7 +1,7 @@
 <script>
   import { timeScale } from "$lib/stores";
-  import { scaleTime } from "d3"
-    import { afterUpdate } from "svelte";
+  import { scaleTime, select } from "d3"
+  import { afterUpdate } from "svelte";
 
   export let w
   export let h
@@ -33,6 +33,14 @@
     });
   }, [$timeScale])
 
+  function faseMouseOver(fase){
+    select('.fase-' + fase.naam.replaceAll(' ','')).attr('stroke', 'steelblue')
+  }
+
+  function faseMouseOut(fase){
+    select('.fase-' + fase.naam.replaceAll(' ','')).attr('stroke', 'none')
+  }
+
 
 </script>
 
@@ -54,13 +62,15 @@
                 </text>
               {/if}
             {/each}
-          <text class='yeartext' x={(i*4) * (quarterWidth) + 2*quarterWidth} text-anchor='middle' y={svgHeight+30} font-size='22' style='fill:rgb(170, 170, 170)'>{year}</text>
+            <text class='yeartext' x={(i*4) * (quarterWidth) + 2*quarterWidth} text-anchor='middle' y={svgHeight+30} font-size='22' style='fill:rgb(170, 170, 170)'>{year}</text>
           </g>
         {/each}
         {#each fasen as fase}
           <g class='fases' transform='translate({fase.tijd[0]}, -9)'>
-            <text x={(fase.tijd[1]-fase.tijd[0])/2} y='-12' text-anchor='middle'>{fase.naam}</text>
+            <text x={(fase.tijd[1]-fase.tijd[0])/2} y='-12' text-anchor='middle' cursor='default'>{fase.naam}</text>
             <line x1={20} x2={fase.tijd[1]-fase.tijd[0]-20} y1={0} y2={0} stroke='lightgrey' marker-end="url(#arrow)" marker-start="url(#arrow)" stroke-width='5'></line>
+            <rect class='fase-{fase.naam.replaceAll(' ','')}' height={svgHeight} width={fase.tijd[1]-fase.tijd[0]} x={0} y='10' fill='none' stroke-width='5'/>
+            <rect width={fase.tijd[1]-fase.tijd[0]} x={0} height={50} y='-40' on:mouseover={() => faseMouseOver(fase)} on:mouseout={() => faseMouseOut(fase)} fill-opacity='0'></rect>
           </g>
         {/each}
         <defs>

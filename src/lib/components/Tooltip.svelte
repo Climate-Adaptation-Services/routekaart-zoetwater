@@ -12,7 +12,6 @@
   const proces = ($procesHover !== null)
     ? data.proces.filter(d => d['procID'] === $procesHover)[0]
     : data.proces.filter(k => k['procID'] === data.product.filter(d => d['prodID'] === $productHover)[0]['procID'])[0]
-  console.log(proces)
 
   const procesIndex = parseInt(proces['procID'].split('proc')[1])
 
