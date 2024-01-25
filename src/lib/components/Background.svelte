@@ -1,7 +1,8 @@
 <script>
-  import { timeScale } from "$lib/stores";
+  import { timeScale, faseHover } from "$lib/stores";
   import { scaleTime, select } from "d3"
   import { afterUpdate } from "svelte";
+  import TooltipFase from "./TooltipFase.svelte";
 
   export let w
   export let h
@@ -28,17 +29,18 @@
     data.fases.forEach(fase => {
       fasen.push({
         naam:fase['Titel'], 
-        tijd:[$timeScale(new Date(fase['Datum start']+'-01')), $timeScale(new Date(fase['Datum eind']+'-30'))]}
+        tijd:[$timeScale(new Date(fase['Datum start']+'-01')), $timeScale(new Date(fase['Datum eind']+'-30'))],
+        beschrijving: fase['Korte beschrijving']}
       )
     });
   }, [$timeScale])
 
   function faseMouseOver(fase){
-    select('.fase-' + fase.naam.replaceAll(' ','')).attr('stroke', 'steelblue')
+    faseHover.set(fase)
   }
 
   function faseMouseOut(fase){
-    select('.fase-' + fase.naam.replaceAll(' ','')).attr('stroke', 'none')
+    faseHover.set(null)
   }
 
 
@@ -69,7 +71,7 @@
           <g class='fases' transform='translate({fase.tijd[0]}, -9)'>
             <text x={(fase.tijd[1]-fase.tijd[0])/2} y='-12' text-anchor='middle' cursor='default'>{fase.naam}</text>
             <line x1={20} x2={fase.tijd[1]-fase.tijd[0]-20} y1={0} y2={0} stroke='lightgrey' marker-end="url(#arrow)" marker-start="url(#arrow)" stroke-width='5'></line>
-            <rect class='fase-{fase.naam.replaceAll(' ','')}' height={svgHeight} width={fase.tijd[1]-fase.tijd[0]} x={0} y='10' fill='none' stroke-width='5'/>
+            <rect height={svgHeight} width={fase.tijd[1]-fase.tijd[0]} x={0} y='10' fill='none' stroke-width='5' stroke={($faseHover !== null && $faseHover.naam === fase.naam) ? 'steelblue' : 'none'}/>
             <rect width={fase.tijd[1]-fase.tijd[0]} x={0} height={50} y='-40' on:mouseover={() => faseMouseOver(fase)} on:mouseout={() => faseMouseOut(fase)} fill-opacity='0'></rect>
           </g>
         {/each}
@@ -89,6 +91,10 @@
         </defs>
       </g>
     </svg>
+    {#if $faseHover}
+      <TooltipFase h={svgHeight} {contentMargin}/>
+    {/if}
+
   {/if}
 </div>
 

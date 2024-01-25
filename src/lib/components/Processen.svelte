@@ -1,7 +1,7 @@
 <script>
   import { procesHover, productHover, timeScale } from "$lib/stores";
 
-  import Tooltip from "./Tooltip.svelte";
+  import TooltipProces from "./TooltipProces.svelte";
 
   export let data
   export let w
@@ -100,7 +100,7 @@
     </g>
   </svg>
   {#if $procesHover !== null || $productHover !== null}
-    <Tooltip {procesHeight} {bandStep} {data} {margin} />
+    <TooltipProces {procesHeight} {bandStep} {data} {margin} />
   {/if}
 {/if}
 
