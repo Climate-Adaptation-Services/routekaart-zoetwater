@@ -15,7 +15,7 @@
 
 <style>
   .fase-tooltip{
-    background-color:rgb(230,230,230);
+    background-color: rgb(246, 240, 232);
     position:absolute;
     margin-top:0%;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
