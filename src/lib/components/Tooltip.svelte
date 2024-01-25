@@ -28,7 +28,7 @@
 
   const procesColorsLight = {
     'Landelijk team': '#f0f5fc',
-    "Regio": '#fbefef',
+    "Regio": '#fdf3f3',
     "Samen": '#effaef'
   }
 
@@ -154,7 +154,7 @@
     /* stroke:rgb(170,170,170); */
     stroke-dasharray:7 3; 
     stroke-width: 1;
-    stroke-opacity: 0.5;
+    stroke-opacity: 0.6;
   }
 
   .tooltip path, line{
