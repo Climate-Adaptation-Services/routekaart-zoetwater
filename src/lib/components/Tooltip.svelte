@@ -26,10 +26,16 @@
     ? 'top'
     : 'bottom'
 
-  const procesColors = {
+  const procesColorsLight = {
     'Landelijk team': '#f0f5fc',
     "Regio": '#fbefef',
     "Samen": '#effaef'
+  }
+
+  const procesColors = {
+    'Landelijk team': '#0070C0',
+    "Regio": '#C00001',
+    "Samen": '#00B050'
   }
 
   let offsetX = 0;
@@ -102,12 +108,12 @@
   {#if tooltipWidth > 0}
     <svg>
       <defs>
-        <radialGradient id="grad1" cx="{Math.random()*100}%" cy="{Math.random()*100}%" r="100%" fx="{Math.random()*100}%" fy="{Math.random()*100}%">
+        <radialGradient id="grad1" cx="50%" cy="50%" r="100%" fx="50%" fy="50%">
           <stop offset="30%" style="stop-color:rgb(255,255,255)"/>
-          <stop offset="100%" style="stop-color:{procesColors[proces['Wie']]}"/>
+          <stop offset="100%" style="stop-color:{procesColorsLight[proces['Wie']]}"/>
         </radialGradient>
       </defs>
-      <g class='tooltip' transform='translate({-divOffsetX},{-divOffsetY})'>
+      <g class='tooltip' transform='translate({-divOffsetX},{-divOffsetY})' style='stroke:{procesColors[proces['Wie']]}'>
         <line 
           x1={0}
           x2={(tooltipLocation === 'bottom') ? offsetX : divOffsetX}
@@ -145,9 +151,10 @@
     pointer-events: none;
     width:800px;
     height:800px;
-    stroke:rgb(170,170,170);
+    /* stroke:rgb(170,170,170); */
     stroke-dasharray:7 3; 
     stroke-width: 1;
+    stroke-opacity: 0.5;
   }
 
   .tooltip path, line{
