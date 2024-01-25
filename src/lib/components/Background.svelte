@@ -1,6 +1,7 @@
 <script>
   import { timeScale } from "$lib/stores";
   import { scaleTime } from "d3"
+    import { afterUpdate } from "svelte";
 
   export let w
   export let h
@@ -22,16 +23,16 @@
   }
 
   let fasen = []
-  $: if($timeScale){
+  afterUpdate(() => {
+    fasen = []
     data.fases.forEach(fase => {
       fasen.push({
         naam:fase['Titel'], 
         tijd:[$timeScale(new Date(fase['Datum start']+'-01')), $timeScale(new Date(fase['Datum eind']+'-30'))]}
       )
     });
-  }
+  }, [$timeScale])
 
-  $: console.log(fasen)
 
 </script>
 

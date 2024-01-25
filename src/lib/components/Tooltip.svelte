@@ -27,9 +27,9 @@
     : 'bottom'
 
   const procesColors = {
-    'Landelijk team': '#daeafc',
-    "Regio": '#fcecef',
-    "Samen": '#e9fce8'
+    'Landelijk team': '#f0f5fc',
+    "Regio": '#fbefef',
+    "Samen": '#effaef'
   }
 
   let offsetX = 0;
@@ -75,7 +75,7 @@
       <h4>
         {proces['Volledige titel']}
       </h4>
-      <p style='font-size:14px'>
+      <p class='kortbeschrijving' style='font-size:14px'>
         {proces['Korte beschrijving']}
       </p>
       <hr>
@@ -103,11 +103,11 @@
     <svg>
       <defs>
         <radialGradient id="grad1" cx="{Math.random()*100}%" cy="{Math.random()*100}%" r="100%" fx="{Math.random()*100}%" fy="{Math.random()*100}%">
-          <stop offset="0%" style="stop-color:rgb(255,255,255)"/>
+          <stop offset="30%" style="stop-color:rgb(255,255,255)"/>
           <stop offset="100%" style="stop-color:{procesColors[proces['Wie']]}"/>
         </radialGradient>
       </defs>
-      <g class='tooltip' stroke='rgb(130,130,130)' stroke-dasharray="7 3" transform='translate({-divOffsetX},{-divOffsetY})'>
+      <g class='tooltip' transform='translate({-divOffsetX},{-divOffsetY})'>
         <line 
           x1={0}
           x2={(tooltipLocation === 'bottom') ? offsetX : divOffsetX}
@@ -145,6 +145,20 @@
     pointer-events: none;
     width:800px;
     height:800px;
+    stroke:rgb(130,130,130);
+    stroke-dasharray:7 3; 
+    stroke-width: 1;
+  }
+
+  .tooltip path, line{
+    stroke-dasharray: 7 7;
+    animation: dash 80s linear infinite;
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -1000;
+    }
   }
 
   .tooltipContent{
@@ -157,6 +171,7 @@
     padding:20px;
     max-width: 450px;
     text-align: center;
+    color: #635F5D;
   }
 
   svg{
@@ -188,6 +203,10 @@
     width:35px;
     height:35px;
     padding-right:10px;
+  }
+
+  .kortbeschrijving{
+    color: #8E8883
   }
 
 </style>
