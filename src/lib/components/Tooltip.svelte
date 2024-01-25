@@ -145,14 +145,14 @@
     pointer-events: none;
     width:800px;
     height:800px;
-    stroke:rgb(130,130,130);
+    stroke:rgb(170,170,170);
     stroke-dasharray:7 3; 
     stroke-width: 1;
   }
 
   .tooltip path, line{
     stroke-dasharray: 7 7;
-    animation: dash 80s linear infinite;
+    animation: dash 90s linear infinite;
   }
 
   @keyframes dash {
