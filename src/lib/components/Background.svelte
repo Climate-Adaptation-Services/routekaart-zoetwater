@@ -71,7 +71,7 @@
           <g class='fases' transform='translate({fase.tijd[0]}, -9)'>
             <text x={(fase.tijd[1]-fase.tijd[0])/2} y='-12' text-anchor='middle' cursor='default'>{fase.naam}</text>
             <line x1={20} x2={fase.tijd[1]-fase.tijd[0]-20} y1={0} y2={0} stroke='lightgrey' marker-end="url(#arrow)" marker-start="url(#arrow)" stroke-width='5'></line>
-            <rect height={svgHeight} width={fase.tijd[1]-fase.tijd[0]} x={0} y='10' fill='none' stroke-width='5' stroke={($faseHover !== null && $faseHover.naam === fase.naam) ? 'steelblue' : 'none'}/>
+            <rect class='faseboundary' height={svgHeight} width={fase.tijd[1]-fase.tijd[0]} x={0} y='10' fill='none' stroke={($faseHover !== null && $faseHover.naam === fase.naam) ? 'steelblue' : 'none'}/>
             <rect width={fase.tijd[1]-fase.tijd[0]} x={0} height={50} y='-40' on:mouseover={() => faseMouseOver(fase)} on:mouseout={() => faseMouseOut(fase)} fill-opacity='0'></rect>
           </g>
         {/each}
@@ -116,6 +116,18 @@
   }
   .yeartext{
     font-weight: 500;   
+  }
+
+  .faseboundary{
+    stroke-width:3; 
+    stroke-dasharray: 7 3;
+    animation: dash 90s linear infinite;
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -800;
+    }
   }
 
 </style>
