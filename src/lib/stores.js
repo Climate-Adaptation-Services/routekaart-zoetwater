@@ -1,7 +1,6 @@
 import { writable, readable } from "svelte/store";
 
-export const procesHover = writable(null)
-export const productHover = writable(null)
+export const procesSelection = writable(null)
 export const timeScale = writable(null)
 export const faseHover = writable(null)
 

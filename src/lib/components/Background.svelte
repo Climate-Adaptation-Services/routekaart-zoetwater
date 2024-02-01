@@ -1,5 +1,5 @@
 <script>
-  import { timeScale, faseHover } from "$lib/stores";
+  import { timeScale, faseHover, procesSelection } from "$lib/stores";
   import { scaleTime } from "d3"
   import { afterUpdate } from "svelte";
   import TooltipFase from "./TooltipFase.svelte";

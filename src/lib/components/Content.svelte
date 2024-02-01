@@ -21,8 +21,6 @@
 
   $: procesHeight = contentHeight - bpzHeight - omgevingHeight - quarterPadding
 
-  $: console.log(bpz, omgeving)
-
   function clickSpoor(spoor){
     (spoor === 'bpz')
       ? (bpz) 
@@ -42,7 +40,7 @@
   </div>
   
   {#each ['bpz', 'omgeving'] as spoor}
-    <div class={'sporen ' + spoor} style='height:{(spoor === 'bpz') ? bpzHeight : omgevingHeight}px' on:click={() => clickSpoor(spoor)}>
+    <div class={'spoor ' + spoor} style='height:{(spoor === 'bpz') ? bpzHeight : omgevingHeight}px' on:click={() => clickSpoor(spoor)}>
       <Spoor {data} w={contentWidth} h={(spoor === 'bpz') ? bpzHeight : omgevingHeight} {spoor} uitgeklapt={(spoor === 'bpz') ? bpz : omgeving}/>
     </div>
   {/each}
@@ -65,7 +63,7 @@
   .omgeving{
     background-color: rgba(94, 166, 39, 0.433);
   }
-  .sporen{
+  .spoor{
     cursor:pointer;
     transition: all 1s;
   }

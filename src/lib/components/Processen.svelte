@@ -1,5 +1,5 @@
 <script>
-  import { procesHover, timeScale, procesColors } from "$lib/stores";
+  import { procesSelection, timeScale, procesColors } from "$lib/stores";
   import Product from "./Product.svelte";
 
   import TooltipProces from "./TooltipProces.svelte";
@@ -16,18 +16,19 @@
 
   $: procesHeight = h*0.03
 
-  function mouseOverProces(proces){
-    procesHover.set(proces['procID'])
+  function clickProces(proces){
+    procesSelection.set(null)
+    setTimeout(() => { procesSelection.set(proces['procID']) }, 1);
   }
 
-  function mouseOutProces(){
-    procesHover.set(null)
-  }
+  // function mouseOutProces(){
+  //   procesSelection.set(null)
+  // }
 
 </script>
 
 {#if $timeScale}
-  <svg class='procesSVG'>
+  <svg class='procesSVG' viewBox="0 0 {w} {h}" on:click={() => procesSelection.set(null)}>
     <defs>
       <filter id='glow'>
         <feGaussianBlur stdDeviation='2.5' result='coloredBlur'/>
@@ -51,7 +52,7 @@
     <g transform='translate({0},{margin.top})'>
       {#each data.proces as proces, i}
         <g transform='translate({0},{i*bandStep})' class={'proces-g proces-g-' + proces['procID']}
-          opacity={($procesHover && $procesHover !== proces['procID'])
+          opacity={($procesSelection && $procesSelection !== proces['procID'])
             ? 0.2 
             : 1}>
           <rect 
@@ -63,9 +64,8 @@
             fill={$procesColors[proces['Wie']]}
             stroke='none' 
             style='filter:url(#glow)'
-            on:mouseover={() => mouseOverProces(proces)}
-            on:mouseout={() => mouseOutProces(proces)}/>
-
+            on:click={() => clickProces(proces)}
+          />
           {#each data.product.filter(product => product['procID'] === proces['procID']) as product, j}
             <Product {product} {data} {procesHeight} {bandStep} {j} />
           {/each}
@@ -85,7 +85,7 @@
       {/each}
     </g>
   </svg>
-  {#if $procesHover !== null}
+  {#if $procesSelection !== null}
     <TooltipProces {procesHeight} {bandStep} {data} {margin} />
   {/if}
 {/if}

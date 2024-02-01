@@ -1,5 +1,5 @@
 <script>
-  import { procesHover, productHover } from "$lib/stores";
+  import { procesSelection } from "$lib/stores";
   import { onMount } from "svelte";
   import { timeScale } from "$lib/stores";
 
@@ -9,15 +9,11 @@
   export let margin
 
 
-  const proces = ($procesHover !== null)
-    ? data.proces.filter(d => d['procID'] === $procesHover)[0]
-    : data.proces.filter(k => k['procID'] === data.product.filter(d => d['prodID'] === $productHover)[0]['procID'])[0]
+  const proces = data.proces.filter(d => d['procID'] === $procesSelection)[0]
 
   const procesIndex = parseInt(proces['procID'].split('proc')[1])
 
-  const producten = ($procesHover !== null)
-    ? data.product.filter(prod => prod['procID'] === proces['procID'])
-    : data.product.filter(prod => prod['prodID'] === $productHover)
+  const producten = data.product.filter(prod => prod['procID'] === proces['procID'])
 
   const procesWidth = $timeScale(new Date(proces['Datum eind']+'-30'))-$timeScale(new Date(proces['Datum start']+'-01'))
 
@@ -76,23 +72,21 @@
     left:{$timeScale(new Date(proces['Datum start']+'-01'))}px; top:{procesIndex*bandStep - bandStep + procesHeight}px'>
 
   <div class='tooltipContent' style='transform:translate({(tooltipLocation === 'bottom') ? offsetX : 0}px,{(tooltipLocation === 'bottom') ? offsetY : 0}px)' >
-    {#if $productHover === null}
-      <h4>
-        {proces['Volledige titel']}
-      </h4>
-      <p class='kortbeschrijving' style='font-size:14px'>
-        {proces['Korte beschrijving']}
-      </p>
-      <hr>
-      <div class='proces-extra-info'>
-        <img class='extra-info-imgs' src="/images/schedule.png" />
-        <p>{maand[proces['Datum start'].split('-')[1]] + ' ' + proces['Datum start'].split('-')[0] + ' -- ' + maand[proces['Datum eind'].split('-')[1]] + ' ' + proces['Datum eind'].split('-')[0]}</p>
-      </div>
-      <div class='proces-extra-info'>
-        <img class='extra-info-imgs' src="/images/team.png" />
-        <p>{proces['Wie']}</p>
-      </div>
-    {/if}
+    <h4>
+      {proces['Volledige titel']}
+    </h4>
+    <p class='kortbeschrijving' style='font-size:14px'>
+      {proces['Korte beschrijving']}
+    </p>
+    <hr>
+    <div class='proces-extra-info'>
+      <img class='extra-info-imgs' src="/images/schedule.png" />
+      <p>{maand[proces['Datum start'].split('-')[1]] + ' ' + proces['Datum start'].split('-')[0] + ' -- ' + maand[proces['Datum eind'].split('-')[1]] + ' ' + proces['Datum eind'].split('-')[0]}</p>
+    </div>
+    <div class='proces-extra-info'>
+      <img class='extra-info-imgs' src="/images/team.png" />
+      <p>{proces['Wie']}</p>
+    </div>
     {#if producten.length > 0}
       <div class='proces-extra-info'>
         <img class='extra-info-imgs' src="/images/goal.png" />
@@ -101,11 +95,13 @@
         {/each}
       </div>
     {/if}
+    <img src="/images/cancel.png" style='right:5px; top:5px; cursor:pointer; position:absolute; opacity:0.3' 
+      width='25px' on:click={() => procesSelection.set(null)}/>
 
   </div>
 
   {#if tooltipWidth > 0}
-    <svg>
+    <svg on:click={() => procesSelection.set(null)}>
       <defs>
         <radialGradient id="grad1" cx="50%" cy="50%" r="100%" fx="50%" fy="50%">
           <stop offset="40%" style="stop-color:rgb(255,255,255)"/>
@@ -147,7 +143,7 @@
   .tooltip{
     position: absolute;
     z-index: 500;
-    pointer-events: none;
+    /* pointer-events: none; */
     width:800px;
     height:800px;
     /* stroke:rgb(170,170,170); */

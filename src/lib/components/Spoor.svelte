@@ -3,10 +3,17 @@
   export let h
   export let spoor
   export let uitgeklapt
+
+  let hover = false;
+
+  function spoorMouseOver(){
+    hover = true
+  }
+
 </script>
 
 <svg class='svg-{spoor}'>
-  <g class='g-spoor'>
+  <g class='g-spoor' on:mouseover={() => spoorMouseOver()}>
     <text 
       class='title'
       x='10' 
@@ -16,6 +23,9 @@
     >
       {(spoor === 'bpz') ? 'Bestuurlijk spoor' : 'Omgevingsspoor'}
     </text>
+    {#if !uitgeklapt}
+      <text x={w/2} y='1.3em' text-anchor='middle' font-style='italic' font-weight='100' style='fill:white'>Klik om uit te klappen</text>
+    {/if}
   </g>
 </svg>
 
