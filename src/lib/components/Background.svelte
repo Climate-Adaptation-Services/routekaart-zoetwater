@@ -1,8 +1,9 @@
 <script>
   import { timeScale, faseHover } from "$lib/stores";
-  import { scaleTime, select } from "d3"
+  import { scaleTime } from "d3"
   import { afterUpdate } from "svelte";
   import TooltipFase from "./TooltipFase.svelte";
+  import Legend from "./Legend.svelte";
 
   export let w
   export let h
@@ -75,6 +76,7 @@
             <rect width={fase.tijd[1]-fase.tijd[0]} x={0} height={50} y='-40' on:mouseover={() => faseMouseOver(fase)} on:mouseout={() => faseMouseOut(fase)} fill-opacity='0'></rect>
           </g>
         {/each}
+        <Legend />
         <defs>
           <!-- A marker to be used as an arrowhead -->
           <marker
