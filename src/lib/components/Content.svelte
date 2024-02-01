@@ -1,7 +1,7 @@
 <script>
   import Processen from "./Processen.svelte";
-  import BPZ from "./BPZ.svelte";
-  
+  import Spoor from "./Spoor.svelte";
+
   export let w;
   export let h;
   export let data;
@@ -10,9 +10,29 @@
 
   $: contentHeight = h - 2*contentMargin
   $: contentWidth = w - 2*contentMargin
-  $: procesHeight = 0.8*contentHeight
-  $: bpzHeight = 0.2*contentHeight
 
+  let bpz = false;
+  let omgeving = false;
+
+  $: bpzHeight = (bpz) ? 0.13*contentHeight : 0.05*contentHeight
+  $: omgevingHeight = (omgeving) ? 0.13*contentHeight : 0.05*contentHeight
+
+  $: quarterPadding = 0.05*contentHeight
+
+  $: procesHeight = contentHeight - bpzHeight - omgevingHeight - quarterPadding
+
+  $: console.log(bpz, omgeving)
+
+  function clickSpoor(spoor){
+    (spoor === 'bpz')
+      ? (bpz) 
+        ? bpz = false 
+        : bpz = true
+      : (omgeving)
+        ? omgeving = false
+        : omgeving = true
+  }
+  
 </script>
 
 
@@ -20,8 +40,13 @@
   <div class='processen' style='height:{procesHeight}px'>
     <Processen {data} w={contentWidth} h={procesHeight}/>
   </div>
-  <div class='bpz' style='height:{bpzHeight}px'>
-    <BPZ {data} w={contentWidth} h={bpzHeight}/>
+  
+  {#each ['bpz', 'omgeving'] as spoor}
+    <div class={'sporen ' + spoor} style='height:{(spoor === 'bpz') ? bpzHeight : omgevingHeight}px' on:click={() => clickSpoor(spoor)}>
+      <Spoor {data} w={contentWidth} h={(spoor === 'bpz') ? bpzHeight : omgevingHeight} {spoor} uitgeklapt={(spoor === 'bpz') ? bpz : omgeving}/>
+    </div>
+  {/each}
+  <div class='quarter-padding' style='height:{quarterPadding}px'>
   </div>
 </div>
 
@@ -32,8 +57,16 @@
 
   .processen{
     /* background-color: rgba(255, 0, 0, 0.05); */
+    transition: all 1s;
   }
   .bpz{
-    background-color: rgba(232, 176, 23, 0.109);
+    background-color: rgba(232, 176, 23, 0.47);
+  }
+  .omgeving{
+    background-color: rgba(94, 166, 39, 0.433);
+  }
+  .sporen{
+    cursor:pointer;
+    transition: all 1s;
   }
 </style>

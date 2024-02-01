@@ -60,7 +60,7 @@
                   x={(i*4+j) * (quarterWidth)}
                   y={0}
                 />
-                <text class='quartertext' x={(i*4+j) * (quarterWidth) + 0.5*quarterWidth} text-anchor='middle' y={svgHeight-16} font-size='18' style='fill:rgb(190, 190, 190)'>
+                <text class='quartertext' x={(i*4+j) * (quarterWidth) + 0.5*quarterWidth} text-anchor='middle' y={svgHeight-10} font-size='18' style='fill:rgb(190, 190, 190)'>
                   {quarter}
                 </text>
               {/if}

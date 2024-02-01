@@ -7,7 +7,7 @@
 
 </script>
 
-<g class='legend' transform='translate({$timeScale(new Date("2026-03-01")) - 50},{70})'>
+<g class='legend' transform='translate({$timeScale(new Date("2026-08-01")) - 70},{40})'>
   <rect 
     fill='#F6F0E8'
     width={legendWidth}

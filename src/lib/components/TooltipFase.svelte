@@ -4,13 +4,13 @@
   export let h;
   export let contentMargin;
 
-  const padding = 20
+  const padding = 15
 
 </script>
 
 
-<div class='fase-tooltip' style='width:{$faseHover.tijd[1]-$faseHover.tijd[0] - 2*padding - 6}px; left:{contentMargin + $faseHover.tijd[0]+3}px; top:{contentMargin+3}px; padding:40px 20px 40px 20px'>
-  <p>{$faseHover.beschrijving}</p>
+<div class='fase-tooltip' style='width:{$faseHover.tijd[1]-$faseHover.tijd[0] - 2*padding - 6}px; left:{contentMargin + $faseHover.tijd[0]+3}px; top:{contentMargin+3}px; padding:40px {padding}px 40px {padding}px'>
+  <p style='font-size:{h*0.017}px'>{$faseHover.beschrijving}</p>
 </div>
 
 <style>
