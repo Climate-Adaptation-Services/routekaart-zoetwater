@@ -3,7 +3,7 @@
   import { timeScale, procesColors } from "$lib/stores";
 
   const legendWidth = 300
-  const legendHeight = 310
+  const legendHeight = 330
 
 </script>
 
@@ -32,6 +32,10 @@
         <text>{type}</text>
       </g>
     {/each}
+    <g transform='translate(-70,283)'>
+      <rect fill='white' width={22} height={22} transform='rotate(45)' style='-webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .3))'/>
+      <text x={45} y={20}>Product</text>
+    </g>
   </g>
 </g>
 
