@@ -1,6 +1,7 @@
 <script>
   import { procesSelection, timeScale, procesColors } from "$lib/stores";
   import Product from "./Product.svelte";
+  import { select } from "d3";
 
   import TooltipProces from "./TooltipProces.svelte";
 
@@ -20,10 +21,6 @@
     procesSelection.set(null)
     setTimeout(() => { procesSelection.set(proces['procID']) }, 1);
   }
-
-  // function mouseOutProces(){
-  //   procesSelection.set(null)
-  // }
 
 </script>
 
@@ -56,15 +53,16 @@
             ? 0.2 
             : 1}>
           <rect 
-            class={'proces-' + proces['procID']}
+            class={'procesrect proces-' + proces['procID']}
             x={$timeScale(new Date(proces['Datum start']+'-01'))}
             y={0} 
             height={procesHeight}
             width={$timeScale(new Date(proces['Datum eind']+'-30')) - $timeScale(new Date(proces['Datum start']+'-01')) - 2} 
             fill={$procesColors[proces['Wie']]}
-            stroke='none' 
             style='filter:url(#glow)'
             on:click={() => clickProces(proces)}
+            on:mouseover={() => {if($procesSelection === null){select('.proces-' + proces['procID']).style('stroke', 'white')}}}
+            on:mouseout={() => select('.proces-' + proces['procID']).style('stroke', 'none')}
           />
           {#each data.product.filter(product => product['procID'] === proces['procID']) as product, j}
             <Product {product} {data} {procesHeight} {bandStep} {j} />
@@ -98,8 +96,20 @@
   }
 
   .proces-g{
-    transition:all 0.8s;
-    cursor: pointer;
+    transition:all 0.2s;
+    cursor: pointer;  
+  }
+
+  .procesrect:hover{
+    stroke-dasharray:7 7;
+    stroke-width:1.5;
+    animation: dash 120s linear infinite;
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -1000;
+    }
   }
 
   .proces-titel{

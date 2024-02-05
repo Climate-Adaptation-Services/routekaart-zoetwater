@@ -7,7 +7,7 @@
 
 </script>
 
-<svg viewbox='0 0 {legendWidth} {legendHeight}'>
+<svg>
   <g class='legend' transform='translate({$timeScale(new Date("2026-08-01")) - 70},{40})'>
     <rect 
       fill='#F6F0E8'

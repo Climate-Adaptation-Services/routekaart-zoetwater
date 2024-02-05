@@ -67,4 +67,9 @@
     cursor:pointer;
     transition: all 1s;
   }
+
+  .spoor:hover{
+    -webkit-filter: brightness(1.1);
+    filter: brightness(1.1);
+  }
 </style>
