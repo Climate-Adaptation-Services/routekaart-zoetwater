@@ -42,7 +42,7 @@
     </g>
 
     <g class='spoor-button' on:click={() => clickSpoor(spoor)} >
-      <rect height={hIngeklapt} width='100' style='fill:{(spoor === 'bpz') ? '#EA7722' : '#6FAD33'}; cursor:pointer; stroke-width:2.5'/>
+      <rect height={hIngeklapt} width='104' style='fill:{(spoor === 'bpz') ? '#EA7722' : '#6FAD33'}; cursor:pointer; stroke-width:2.5'/>
       <text 
         class='title'
         x='10' 
