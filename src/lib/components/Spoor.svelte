@@ -24,16 +24,16 @@
     <g class='uitgeklapt-spoor' style='opacity:{(uitgeklapt) ? 1 : 0}'>
       <rect fill={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} width={w} height={hUitgeklapt*0.2} x={0} y={hUitgeklapt*0.2 - (hUitgeklapt/5)/2}/>
       {#each data.bpz as bpz}
-        <g transform='translate({$timeScale(new Date(bpz['Datum']+'-01'))},{hUitgeklapt*0.2})'>
+        <g transform='translate({$timeScale(new Date(bpz['Datum']+'-20'))},{hUitgeklapt*0.2})'>
           <circle 
             cx={0}
             cy={0}
             r={12}
             fill='white'
-            stroke='black'
+            stroke={(bpz['Type'] === 'Ter bespreking') ? 'grey' : (spoor === 'bpz') ? '#EA7722' : '#6FAD33'}
             stroke-width='5'
           />
-          <text text-anchor='middle' font-size='8' style='fill:rgb(50,50,50)'
+          <text text-anchor='middle' font-size='10' style='fill:rgb(50,50,50)'
             y='1.5em'>
             {#each bpz['Korte titel'].split(' ') as word}
               <tspan dy='1em' x={0}>{word}</tspan>
