@@ -18,7 +18,7 @@
 <svg class='svg-{spoor}'>
   <g class='g-spoor'>
 
-    <g class='uitgeklapt-spoor' style='opacity:{(uitgeklapt) ? 1 : 0}'>
+    <g class='uitgeklapt-spoor' style='opacity:{(uitgeklapt) ? 1 : 0}; visibility:{(uitgeklapt) ? 'visible' : 'hidden'}; }'>
       <rect fill={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} width={w} height={hUitgeklapt*0.2} x={0} y={hUitgeklapt*0.2 - (hUitgeklapt/5)/2}/>
       {#each data.bpz as bpz}
         <g transform='translate({$timeScale(new Date(bpz['Datum']+'-20'))},{hUitgeklapt*0.2})'>
@@ -75,12 +75,14 @@
 
   .spoor-circle{
     pointer-events: default;
+    transition: all 0.5s;
   }
 
   .spoor-circle:hover{
     stroke-dasharray: 5 3;
     animation: dash 120s linear infinite;
     cursor: pointer;
+    r:13.5;
   }
 
   .spoor-button rect:hover{
