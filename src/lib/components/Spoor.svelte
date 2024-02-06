@@ -24,7 +24,7 @@
       {(spoor === 'bpz') ? 'Bestuurlijk spoor' : 'Omgevingsspoor'}
     </text>
     {#if !uitgeklapt}
-      <text x={w/2} y='{h/2}' dy='0.36em' text-anchor='middle' font-style='italic' font-weight='100' style='fill:white'>Klik om uit te klappen</text>
+      <text x={w/2} y='{h/2}' dy='0.36em' text-anchor='middle' font-style='italic' font-weight='400' style='fill:rgb(120,120,120)'>Klik om uit te klappen</text>
     {/if}
   </g>
 </svg>

@@ -58,10 +58,10 @@
     transition: all 1s;
   }
   .bpz{
-    background-color: rgba(232, 176, 23, 0.47);
+    background-color: rgba(247, 184, 11, 0.535);
   }
   .omgeving{
-    background-color: rgba(94, 166, 39, 0.433);
+    background-color: rgba(94, 166, 39, 0.592);
   }
   .spoor{
     cursor:pointer;

@@ -2,13 +2,16 @@
 
   import { timeScale, procesColors } from "$lib/stores";
 
-  const legendWidth = 300
-  const legendHeight = 330
+  export let w;
+  export let h;
+
+  $: legendWidth = 300
+  $: legendHeight = 330
 
 </script>
 
-<svg>
-  <g class='legend' transform='translate({$timeScale(new Date("2026-08-01")) - 70},{40})'>
+<svg class='svg-legend' viewbox='-80 -110 {legendWidth+190} {legendHeight+240}' style='left:{$timeScale(new Date("2026-08-01")) - 70}px; top:{-20}px'>
+  <g class='legend'>
     <rect 
       fill='#F6F0E8'
       width={legendWidth}
@@ -43,9 +46,11 @@
 
 <style>
   svg{
-    width:100%;
-    height: 100%;
+    position: fixed;
+    left:0;
+    top:0;
   }
+
   .legend{
     -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .1));
     filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .1));

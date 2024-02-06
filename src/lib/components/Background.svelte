@@ -49,7 +49,7 @@
 
 <div class='background'>
   {#if $timeScale}
-    <svg>
+    <svg viewbox='0 0 {w} {h}'>
       <g transform='translate({contentMargin},{contentMargin})'>
         {#each years as year,i}
           <g class='jaar'>
@@ -76,7 +76,6 @@
             <rect width={fase.tijd[1]-fase.tijd[0]} x={0} height={50} y='-40' on:mouseover={() => faseMouseOver(fase)} on:mouseout={() => faseMouseOut(fase)} fill-opacity='0'></rect>
           </g>
         {/each}
-        <Legend />
         <defs>
           <!-- A marker to be used as an arrowhead -->
           <marker
@@ -104,6 +103,8 @@
         </defs>
       </g>
     </svg>
+    <Legend {w} {h}/>
+
     {#if $faseHover}
       <TooltipFase h={svgHeight} {contentMargin}/>
     {/if}
@@ -113,8 +114,6 @@
 
 <style>
   svg{
-    width:100%;
-    height:100%;
     background-color: rgb(160, 160, 160);
     background-color: rgb(246, 240, 232);
   }

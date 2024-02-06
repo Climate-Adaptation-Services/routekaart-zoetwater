@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
   import { procesSelection } from "$lib/stores";
   import { onMount } from "svelte";
   import { timeScale } from "$lib/stores";
@@ -65,6 +67,9 @@
     '01':'Jan', '02':'Feb', '03':'Maa', '04':'Apr', '05':'Mei', '06':'Jun', '07':'Jul', '08':'Aug', '09':'Sep', '10':'Okt', '11':'Nov', '12':'Dec'
   }
 
+  const imageHeight = procesHeight*2
+  const textSize = procesHeight*0.8
+
 </script>
 
 <div class='tooltip' 
@@ -75,23 +80,23 @@
     <h4>
       {proces['Volledige titel']}
     </h4>
-    <p class='kortbeschrijving' style='font-size:14px'>
+    <p class='kortbeschrijving' style='font-size:{procesHeight*0.8}px'>
       {proces['Korte beschrijving']}
     </p>
     <hr>
     <div class='proces-extra-info'>
-      <img class='extra-info-imgs' src="/images/schedule.png" />
-      <p>{maand[proces['Datum start'].split('-')[1]] + ' ' + proces['Datum start'].split('-')[0] + ' -- ' + maand[proces['Datum eind'].split('-')[1]] + ' ' + proces['Datum eind'].split('-')[0]}</p>
+      <img class='extra-info-imgs' src="/images/schedule.png" style='width:{imageHeight}px'/>
+      <p style='font-size:{textSize}px'>{maand[proces['Datum start'].split('-')[1]] + ' ' + proces['Datum start'].split('-')[0] + ' -- ' + maand[proces['Datum eind'].split('-')[1]] + ' ' + proces['Datum eind'].split('-')[0]}</p>
     </div>
     <div class='proces-extra-info'>
-      <img class='extra-info-imgs' src="/images/team.png" />
-      <p>{proces['Wie']}</p>
+      <img class='extra-info-imgs' src="/images/team.png" style='width:{imageHeight}px'/>
+      <p style='font-size:{textSize}px'>{proces['Wie']}</p>
     </div>
     {#if producten.length > 0}
       <div class='proces-extra-info'>
-        <img class='extra-info-imgs' src="/images/goal.png" />
         {#each producten as product}
-          <p>{product['Volledige omschrijving']}</p>
+          <img class='extra-info-imgs' src="/images/ruitje.png" style='width:{imageHeight}px'/>
+          <p style='font-size:{textSize}px'>{product['Volledige omschrijving']}</p>
         {/each}
       </div>
     {/if}
@@ -101,7 +106,7 @@
   </div>
 
   {#if tooltipWidth > 0}
-    <svg on:click={() => procesSelection.set(null)}>
+    <svg>
       <defs>
         <radialGradient id="grad1" cx="50%" cy="50%" r="100%" fx="50%" fy="50%">
           <stop offset="40%" style="stop-color:rgb(255,255,255)"/>
@@ -137,13 +142,15 @@
 
 <style>
   path{
-    fill:url(#grad1)
+    fill:url(#grad1);
+    pointer-events: default;
+    cursor: pointer;
   }
 
   .tooltip{
     position: absolute;
     z-index: 500;
-    /* pointer-events: none; */
+    pointer-events: none;
     width:800px;
     height:800px;
     /* stroke:rgb(170,170,170); */
@@ -202,8 +209,6 @@
   }
 
   .extra-info-imgs{
-    width:35px;
-    height:35px;
     padding-right:10px;
   }
 
