@@ -41,7 +41,7 @@
   
   {#each ['bpz', 'omgeving'] as spoor}
     <div class={'spoor ' + spoor} style='height:{(spoor === 'bpz') ? bpzHeight : omgevingHeight}px' on:click={() => clickSpoor(spoor)}>
-      <Spoor {data} w={contentWidth} h={(spoor === 'bpz') ? bpzHeight : omgevingHeight} {spoor} uitgeklapt={(spoor === 'bpz') ? bpz : omgeving}/>
+      <Spoor {data} w={contentWidth} hUitgeklapt={0.13*contentHeight} hIngeklapt={0.05*contentHeight} {spoor} uitgeklapt={(spoor === 'bpz') ? bpz : omgeving}/>
     </div>
   {/each}
   <div class='quarter-padding' style='height:{quarterPadding}px'>
@@ -58,18 +58,9 @@
     transition: all 1s;
   }
   .bpz{
-    background-color: rgba(247, 184, 11, 0.535);
+    /* background-color: rgba(247, 184, 11, 0.535); */
   }
   .omgeving{
-    background-color: rgba(94, 166, 39, 0.592);
-  }
-  .spoor{
-    cursor:pointer;
-    transition: all 1s;
-  }
-
-  .spoor:hover{
-    -webkit-filter: brightness(1.1);
-    filter: brightness(1.1);
+    /* background-color: rgba(94, 166, 39, 0.592); */
   }
 </style>
