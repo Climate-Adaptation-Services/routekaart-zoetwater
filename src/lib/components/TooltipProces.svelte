@@ -100,8 +100,8 @@
         {/each}
       </div>
     {/if}
-    <img src="/images/cancel.png" style='right:5px; top:5px; cursor:pointer; position:absolute; opacity:0.3' 
-      width='25px' on:click={() => procesSelection.set(null)}/>
+    <!-- <img src="/images/cancel.png" style='right:5px; top:5px; cursor:pointer; position:absolute; opacity:0.3' 
+      width='25px' on:click={() => procesSelection.set(null)}/> -->
 
   </div>
 
