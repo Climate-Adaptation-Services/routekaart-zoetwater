@@ -18,6 +18,9 @@
   $: procesHeight = h*0.03
 
   function clickProces(proces){
+    select('.proces-' + proces['procID'])
+      .style('stroke', 'none')
+
     procesSelection.set(null)
     setTimeout(() => { procesSelection.set(proces['procID']) }, 1);
   }

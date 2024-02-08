@@ -160,8 +160,8 @@
   }
 
   .tooltip path, line{
-    stroke-dasharray: 7 7;
-    animation: dash 90s linear infinite;
+    /* stroke-dasharray: 7 7; */
+    /* animation: dash 90s linear infinite; */
   }
 
   @keyframes dash {
