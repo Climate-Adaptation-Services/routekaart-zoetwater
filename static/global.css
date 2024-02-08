@@ -9,6 +9,12 @@ body{
   max-width:100%;
 }
 
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.googleapis.com/css2?family=Roboto:400,500,700);
+}
 
 text{
   fill:#8E8883
