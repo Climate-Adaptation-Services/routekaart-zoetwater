@@ -13,13 +13,14 @@
 
   afterUpdate(() => {setTimeout(() => {
     selectAll('.spoor-button rect').attr('width', document.getElementsByClassName('spoor-button-title')[0].getBoundingClientRect().width + 20)
-  }, 1)})
+  }, 500)})
 
 </script>
 
 <svg class='svg-{spoor}'>
   <g class='g-spoor'>
 
+    <!-- dit element bestaat altijd om een fade te kunnen doen bij uitklappen -->
     <g class='uitgeklapt-spoor' style='opacity:{(uitgeklapt) ? 1 : 0}; visibility:{(uitgeklapt) ? 'visible' : 'hidden'}; }'>
       <rect fill={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} width={w} height={hIngeklapt*0.35} x={0} y={hIngeklapt*0.35}/>
       {#each data.bpz as bpz}
@@ -33,12 +34,14 @@
             stroke={(bpz['Type'] === 'Ter bespreking') ? 'grey' : (spoor === 'bpz') ? '#EA7722' : '#6FAD33'}
             stroke-width='5'
           />
-          <text text-anchor='middle' font-size={w*0.006} style='fill:rgb(50,50,50)'
-            y='1.5em'>
-            {#each bpz['Korte titel'].split(' ') as word}
-              <tspan dy='1em' x={0}>{word}</tspan>
-            {/each}
-          </text>
+          {#if uitgeklapt}
+            <text text-anchor='middle' font-size={w*0.006} style='fill:rgb(50,50,50)'
+              y='1.5em'>
+              {#each bpz['Korte titel'].split(' ') as word}
+                <tspan dy='1em' x={0}>{word}</tspan>
+              {/each}
+            </text>
+          {/if}
         </g>
       {/each}
     </g>

@@ -67,14 +67,11 @@
     '01':'Jan', '02':'Feb', '03':'Maa', '04':'Apr', '05':'Mei', '06':'Jun', '07':'Jul', '08':'Aug', '09':'Sep', '10':'Okt', '11':'Nov', '12':'Dec'
   }
 
-  const imageHeight = procesHeight*2
-  const textSize = procesHeight*0.8
-
 </script>
 
-<div class='tooltip' 
+<div class='tooltip-proces' 
   style='transform:translate({divOffsetX}px,{divOffsetY}px);
-    left:{$timeScale(new Date(proces['Datum start']+'-01'))}px; top:{procesIndex*bandStep - bandStep + procesHeight}px'>
+    left:{$timeScale(new Date(proces['Datum start']+'-01'))}px; top:{procesIndex*bandStep - bandStep + 20}px'>
 
   <div class='tooltipContent' style='transform:translate({(tooltipLocation === 'bottom') ? offsetX : 0}px,{(tooltipLocation === 'bottom') ? offsetY : 0}px)' >
     <h3>
@@ -100,6 +97,7 @@
         {/each}
       </div>
     {/if}
+    
     <!-- <img src="/images/cancel.png" style='right:5px; top:5px; cursor:pointer; position:absolute; opacity:0.3' 
       width='25px' on:click={() => procesSelection.set(null)}/> -->
 
@@ -113,11 +111,11 @@
           <stop offset="100%" style="stop-color:{procesColorsLight[proces['Wie']]}"/>
         </radialGradient>
       </defs>
-      <g class='tooltip' transform='translate({-divOffsetX},{-divOffsetY})' style='stroke:{procesColors[proces['Wie']]}'>
+      <g class='g-tooltip' transform='translate({-divOffsetX},{-divOffsetY})' style='stroke:{procesColors[proces['Wie']]}'>
         <line 
           x1={0}
           x2={(tooltipLocation === 'bottom') ? offsetX : divOffsetX}
-          y1={(tooltipLocation === 'top') ? 0 : procesHeight} 
+          y1={(tooltipLocation === 'top') ? 0 : procesHeight}
           y2={offsetY} 
         />
         <line 
@@ -147,7 +145,7 @@
     cursor: pointer;
   }
 
-  .tooltip{
+  .tooltip-proces{
     position: absolute;
     z-index: 500;
     pointer-events: none;
@@ -159,7 +157,7 @@
     stroke-opacity: 0.6;
   }
 
-  .tooltip path, line{
+  .g-tooltip path, line{
     /* stroke-dasharray: 7 7; */
     /* animation: dash 90s linear infinite; */
   }
@@ -178,7 +176,7 @@
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     padding:20px;
-    max-width: 450px;
+    max-width: 550px;
     text-align: center;
     color: #635F5D;
   }

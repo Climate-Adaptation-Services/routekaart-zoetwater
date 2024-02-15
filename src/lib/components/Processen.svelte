@@ -12,7 +12,6 @@
   const margin = {top:20, bottom:30}
   $: innerHeight = h - margin.top - margin.bottom
 
-  // $: bandPadding = h*0.04
   $: bandStep = innerHeight / data.proces.length 
 
   $: procesHeight = h*0.03
