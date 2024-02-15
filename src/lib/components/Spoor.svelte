@@ -1,5 +1,7 @@
 <script>
   import { timeScale } from "$lib/stores"
+  import { selectAll } from "d3";
+  import { afterUpdate } from "svelte";
 
   export let w
   export let hIngeklapt
@@ -9,9 +11,9 @@
   export let data;
   export let clickSpoor
 
-  let hover = false;
-
-  const spoorHeight = 15
+  afterUpdate(() => {setTimeout(() => {
+    selectAll('.spoor-button rect').attr('width', document.getElementsByClassName('spoor-button-title')[0].getBoundingClientRect().width + 20)
+  }, 1)})
 
 </script>
 
@@ -19,19 +21,19 @@
   <g class='g-spoor'>
 
     <g class='uitgeklapt-spoor' style='opacity:{(uitgeklapt) ? 1 : 0}; visibility:{(uitgeklapt) ? 'visible' : 'hidden'}; }'>
-      <rect fill={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} width={w} height={hUitgeklapt*0.2} x={0} y={hUitgeklapt*0.2 - (hUitgeklapt/5)/2}/>
+      <rect fill={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} width={w} height={hIngeklapt*0.35} x={0} y={hIngeklapt*0.35}/>
       {#each data.bpz as bpz}
         <g transform='translate({$timeScale(new Date(bpz['Datum']+'-20'))},{hUitgeklapt*0.2})'>
           <circle 
             class='spoor-circle'
             cx={0}
             cy={0}
-            r={12}
+            r={hIngeklapt*0.25}
             fill='white'
             stroke={(bpz['Type'] === 'Ter bespreking') ? 'grey' : (spoor === 'bpz') ? '#EA7722' : '#6FAD33'}
             stroke-width='5'
           />
-          <text text-anchor='middle' font-size='10' style='fill:rgb(50,50,50)'
+          <text text-anchor='middle' font-size={w*0.006} style='fill:rgb(50,50,50)'
             y='1.5em'>
             {#each bpz['Korte titel'].split(' ') as word}
               <tspan dy='1em' x={0}>{word}</tspan>
@@ -42,11 +44,11 @@
     </g>
 
     <g class='spoor-button' on:click={() => clickSpoor(spoor)} >
-      <rect height={hIngeklapt} width='104' style='fill:{(spoor === 'bpz') ? '#EA7722' : '#6FAD33'}; cursor:pointer; stroke-width:2.5'/>
+      <rect height={hIngeklapt} style='fill:{(spoor === 'bpz') ? '#EA7722' : '#6FAD33'}; cursor:pointer; stroke-width:2.5'/>
       <text 
-        class='title'
+        class='spoor-button-title'
         x='10' 
-        y={(uitgeklapt) ? `15` : `${hIngeklapt/2}`} 
+        y={hIngeklapt/2} 
         dy='0.36em' 
         font-size={`${w*0.01}`}
       >
@@ -63,7 +65,7 @@
     height:100%;
   }
 
-  .title{
+  .spoor-button-title{
     fill:white;
     font-weight: 500;
     transition: all 1s;
@@ -82,7 +84,7 @@
     stroke-dasharray: 5 3;
     animation: dash 120s linear infinite;
     cursor: pointer;
-    r:13.5;
+    transform: scale(1.3);
   }
 
   .spoor-button rect:hover{

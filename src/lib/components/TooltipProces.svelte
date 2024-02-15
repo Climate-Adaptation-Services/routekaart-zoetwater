@@ -77,26 +77,26 @@
     left:{$timeScale(new Date(proces['Datum start']+'-01'))}px; top:{procesIndex*bandStep - bandStep + procesHeight}px'>
 
   <div class='tooltipContent' style='transform:translate({(tooltipLocation === 'bottom') ? offsetX : 0}px,{(tooltipLocation === 'bottom') ? offsetY : 0}px)' >
-    <h4>
+    <h3>
       {proces['Volledige titel']}
-    </h4>
-    <p class='kortbeschrijving' style='font-size:{procesHeight*0.8}px'>
+    </h3>
+    <p class='kortbeschrijving' style='font-size:16px'>
       {proces['Korte beschrijving']}
     </p>
     <hr>
     <div class='proces-extra-info'>
-      <img class='extra-info-imgs' src="/images/schedule.png" style='width:{imageHeight}px'/>
-      <p style='font-size:{textSize}px'>{maand[proces['Datum start'].split('-')[1]] + ' ' + proces['Datum start'].split('-')[0] + ' -- ' + maand[proces['Datum eind'].split('-')[1]] + ' ' + proces['Datum eind'].split('-')[0]}</p>
+      <img class='extra-info-imgs' src="/images/schedule.png" style='width:50px'/>
+      <p style='font-size:18px'>{maand[proces['Datum start'].split('-')[1]] + ' ' + proces['Datum start'].split('-')[0] + ' -- ' + maand[proces['Datum eind'].split('-')[1]] + ' ' + proces['Datum eind'].split('-')[0]}</p>
     </div>
     <div class='proces-extra-info'>
-      <img class='extra-info-imgs' src="/images/team.png" style='width:{imageHeight}px'/>
-      <p style='font-size:{textSize}px'>{proces['Wie']}</p>
+      <img class='extra-info-imgs' src="/images/team.png" style='width:50px'/>
+      <p style='font-size:18px'>{proces['Wie']}</p>
     </div>
     {#if producten.length > 0}
       <div class='proces-extra-info'>
         {#each producten as product}
-          <img class='extra-info-imgs' src="/images/ruitje.png" style='width:{imageHeight}px'/>
-          <p style='font-size:{textSize}px'>{product['Volledige omschrijving']}</p>
+          <img class='extra-info-imgs' src="/images/ruitje.png" style='width:50px'/>
+          <p style='font-size:18px'>{product['Volledige omschrijving']}</p>
         {/each}
       </div>
     {/if}
@@ -188,7 +188,7 @@
     height:100%;
   }
 
-  h4{
+  h3{
     margin-top:0px;
     margin-bottom: 10px;
   }
