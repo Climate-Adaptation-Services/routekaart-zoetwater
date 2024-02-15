@@ -19,11 +19,13 @@
     selectAll('.spoor-button rect').attr('width', document.getElementsByClassName('spoor-button-title')[0].getBoundingClientRect().width + 20)
   }, 500)})
 
+  const dataSpoor = (spoor === 'bpz') ? data.bpz : data.omgeving;
 
-  function clickCircle(bpz){
-    console.log(bpz)
-    if(bpz['prodID'] && bpz['prodID'].length === 6){
-      spoorPijl.set(bpz)
+
+  function clickCircle(spoorCircle){
+    console.log(spoorCircle)
+    if(spoorCircle['prodID'] && spoorCircle['prodID'].length === 6){
+      spoorPijl.set(spoorCircle)
     }else{
       spoorPijl.set(null)
     }
@@ -52,26 +54,26 @@
     <!-- dit element bestaat altijd om een fade te kunnen doen bij uitklappen -->
     <g class='uitgeklapt-spoor' style='opacity:{(uitgeklapt) ? 1 : 0}; visibility:{(uitgeklapt) ? 'visible' : 'hidden'}; }'>
       <rect fill={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} width={w} height={hIngeklapt*0.35} x={0} y={hIngeklapt*0.35}/>
-      {#each data.bpz as bpz}
-        <g transform='translate({$timeScale(new Date(bpz['Datum']+'-30'))},{hUitgeklapt*0.2})'>
-          {#if uitgeklapt && $spoorPijl === bpz && spoor === 'bpz'}
-            <line x1={0} x2={$timeScale(new Date(spoorPijlProduct.Datum)) - $timeScale(new Date(bpz.Datum))} y1={0} y2={-margin.bottom - (data.proces.length - spoorPijlProcesNummer)*bandStep - bandStep} 
+      {#each dataSpoor as spoorCircle}
+        <g transform='translate({$timeScale(new Date(spoorCircle['Datum']+'-30'))},{hUitgeklapt*0.2})'>
+          {#if uitgeklapt && $spoorPijl === spoorCircle && spoor === 'bpz'}
+            <line x1={0} x2={$timeScale(new Date(spoorPijlProduct.Datum)) - $timeScale(new Date(spoorCircle.Datum))} y1={0} y2={-margin.bottom - (data.proces.length - spoorPijlProcesNummer)*bandStep - bandStep} 
               stroke={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} stroke-width='3' marker-start='url(#arrow{spoor})'></line>
           {/if}
         <circle 
-            class='spoor-circle circle-{bpz['Korte titel'].replaceAll(' ','')}}'
+            class='spoor-circle circle-{spoorCircle['Korte titel'].replaceAll(' ','')}}'
             cx={0}
             cy={0}
             r={hIngeklapt*0.25}
             fill='white'
-            stroke={(bpz['Type'] === 'Ter bespreking') ? 'grey' : (spoor === 'bpz') ? '#EA7722' : '#6FAD33'}
+            stroke={(spoorCircle['Type'] === 'Ter bespreking') ? 'grey' : (spoor === 'bpz') ? '#EA7722' : '#6FAD33'}
             stroke-width='5'
-            on:click={() => clickCircle(bpz)}
+            on:click={() => clickCircle(spoorCircle)}
           />
           {#if uitgeklapt}
             <text text-anchor='middle' font-size={w*0.006} style='fill:rgb(50,50,50)'
               y='1.5em'>
-              {#each bpz['Korte titel'].split(' ') as word}
+              {#each spoorCircle['Korte titel'].split(' ') as word}
                 <tspan dy='1em' x={0}>{word}</tspan>
               {/each}
             </text>
