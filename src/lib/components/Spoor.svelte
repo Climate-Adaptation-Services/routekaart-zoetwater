@@ -1,5 +1,5 @@
 <script>
-  import { timeScale } from "$lib/stores"
+  import { timeScale, spoorPijl } from "$lib/stores"
   import { selectAll } from "d3";
   import { afterUpdate } from "svelte";
 
@@ -10,29 +10,58 @@
   export let uitgeklapt
   export let data;
   export let clickSpoor
+  export let procesHeight
+  export let bpzHeight
+  export let bandStep
+  export let margin
 
   afterUpdate(() => {setTimeout(() => {
     selectAll('.spoor-button rect').attr('width', document.getElementsByClassName('spoor-button-title')[0].getBoundingClientRect().width + 20)
   }, 500)})
 
-</script>
 
-<svg class='svg-{spoor}'>
-  <g class='g-spoor'>
+  function clickCircle(bpz){
+    spoorPijl.set(bpz)
+  }
+
+  $: spoorPijlProduct = ($spoorPijl !== null) ? data.product.filter(d => d.prodID === $spoorPijl.prodID)[0] : null
+  $: spoorPijlProces = (spoorPijlProduct !== null) ? data.proces.filter(d => d.procID === spoorPijlProduct.procID)[0] : null
+  $: spoorPijlProcesNummer = (spoorPijlProces !== null) ? parseInt(spoorPijlProces.procID.split('proc')[1]) : null
+
+</script> 
+
+<svg class='svg-{spoor}' style='position:absolute; top:0; height:100%; width:100%; pointer-events:none'>
+  <marker
+    id="arrowbpz"
+    fill="#EA7722"
+    viewBox="0 0 10 10"
+    refX="16"
+    refY="5"
+    markerWidth="6"
+    markerHeight="6"
+    orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" />
+  </marker>
+  <g class='g-spoor' transform='translate(0,{(spoor === 'bpz') ? procesHeight : procesHeight+ bpzHeight})'>
 
     <!-- dit element bestaat altijd om een fade te kunnen doen bij uitklappen -->
     <g class='uitgeklapt-spoor' style='opacity:{(uitgeklapt) ? 1 : 0}; visibility:{(uitgeklapt) ? 'visible' : 'hidden'}; }'>
       <rect fill={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} width={w} height={hIngeklapt*0.35} x={0} y={hIngeklapt*0.35}/>
       {#each data.bpz as bpz}
-        <g transform='translate({$timeScale(new Date(bpz['Datum']+'-20'))},{hUitgeklapt*0.2})'>
-          <circle 
-            class='spoor-circle'
+        <g transform='translate({$timeScale(new Date(bpz['Datum']+'-30'))},{hUitgeklapt*0.2})'>
+          {#if uitgeklapt && $spoorPijl === bpz && spoor === 'bpz'}
+            <line x1={0} x2={$timeScale(new Date(spoorPijlProduct.Datum)) - $timeScale(new Date(bpz.Datum))} y1={0} y2={-margin.bottom - (data.proces.length - spoorPijlProcesNummer)*bandStep - bandStep} 
+              stroke={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} stroke-width='3' marker-start='url(#arrow{spoor})'></line>
+          {/if}
+        <circle 
+            class='spoor-circle circle-{bpz['Korte titel'].replaceAll(' ','')}}'
             cx={0}
             cy={0}
             r={hIngeklapt*0.25}
             fill='white'
             stroke={(bpz['Type'] === 'Ter bespreking') ? 'grey' : (spoor === 'bpz') ? '#EA7722' : '#6FAD33'}
             stroke-width='5'
+            on:click={() => clickCircle(bpz)}
           />
           {#if uitgeklapt}
             <text text-anchor='middle' font-size={w*0.006} style='fill:rgb(50,50,50)'
@@ -63,10 +92,6 @@
 
 
 <style>
-  svg{
-    width:100%;
-    height:100%;
-  }
 
   .spoor-button-title{
     fill:white;
@@ -76,6 +101,11 @@
 
   .uitgeklapt-spoor{
     transition: all 1s;
+  }
+
+  .g-spoor{
+    transition: all 1s;
+    pointer-events: all;
   }
 
   .spoor-circle{

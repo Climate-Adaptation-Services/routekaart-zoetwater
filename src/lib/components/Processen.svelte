@@ -8,11 +8,9 @@
   export let data
   export let w
   export let h
-
-  const margin = {top:20, bottom:30}
-  $: innerHeight = h - margin.top - margin.bottom
-
-  $: bandStep = innerHeight / data.proces.length 
+  export let bandStep
+  export let margin
+  export let innerHeight
 
   $: procesHeight = h*0.03
 

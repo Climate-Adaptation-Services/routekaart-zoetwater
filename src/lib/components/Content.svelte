@@ -21,8 +21,12 @@
 
   $: procesHeight = contentHeight - bpzHeight - omgevingHeight - quarterPadding
 
+  const margin = {top:20, bottom:30}
+  $: innerHeight = procesHeight - margin.top - margin.bottom
+  $: bandStep = innerHeight / data.proces.length 
+
+
   function clickSpoor(spoor){
-    console.log('ello');
     (spoor === 'bpz')
       ? (bpz) 
         ? bpz = false 
@@ -37,12 +41,13 @@
 
 <div class='content' style='left:{contentMargin}px;top:{contentMargin}px;height:{contentHeight}px; width:{contentWidth}px'>
   <div class='processen' style='height:{procesHeight}px'>
-    <Processen {data} w={contentWidth} h={procesHeight}/>
+    <Processen {data} w={contentWidth} h={procesHeight} {margin} {innerHeight} {bandStep}/>
   </div>
   
   {#each ['bpz', 'omgeving'] as spoor}
     <div class={'spoor ' + spoor} style='height:{(spoor === 'bpz') ? bpzHeight : omgevingHeight}px'>
-      <Spoor {data} w={contentWidth} hUitgeklapt={0.13*contentHeight} hIngeklapt={0.05*contentHeight} {spoor} uitgeklapt={(spoor === 'bpz') ? bpz : omgeving} {clickSpoor}/>
+      <Spoor {data} w={contentWidth} hUitgeklapt={0.13*contentHeight} hIngeklapt={0.05*contentHeight} {spoor} uitgeklapt={(spoor === 'bpz') ? bpz : omgeving} 
+        {clickSpoor} {procesHeight} {bpzHeight} {bandStep} {margin}/>
     </div>
   {/each}
   <div class='quarter-padding' style='height:{quarterPadding}px'>
