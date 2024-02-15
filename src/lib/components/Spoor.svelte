@@ -21,7 +21,12 @@
 
 
   function clickCircle(bpz){
-    spoorPijl.set(bpz)
+    console.log(bpz)
+    if(bpz['prodID'] && bpz['prodID'].length === 6){
+      spoorPijl.set(bpz)
+    }else{
+      spoorPijl.set(null)
+    }
   }
 
   $: spoorPijlProduct = ($spoorPijl !== null) ? data.product.filter(d => d.prodID === $spoorPijl.prodID)[0] : null
@@ -35,7 +40,7 @@
     id="arrowbpz"
     fill="#EA7722"
     viewBox="0 0 10 10"
-    refX="16"
+    refX={hIngeklapt*0.25 + 2.5}
     refY="5"
     markerWidth="6"
     markerHeight="6"
@@ -74,7 +79,9 @@
         </g>
       {/each}
     </g>
-
+    {#if spoor === 'bpz' && !uitgeklapt}
+      <text x='5' y='-10'>Klik op spoor om te openen</text>
+    {/if}
     <g class='spoor-button' on:click={() => clickSpoor(spoor)} >
       <rect height={hIngeklapt} style='fill:{(spoor === 'bpz') ? '#EA7722' : '#6FAD33'}; cursor:pointer; stroke-width:2.5'/>
       <text 
