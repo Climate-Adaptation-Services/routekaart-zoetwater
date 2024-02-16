@@ -1,4 +1,5 @@
 <script>
+  import { spoorPijl } from "$lib/stores";
   import Processen from "./Processen.svelte";
   import Spoor from "./Spoor.svelte";
 
@@ -25,8 +26,8 @@
   $: innerHeight = procesHeight - margin.top - margin.bottom
   $: bandStep = innerHeight / data.proces.length 
 
-
   function clickSpoor(spoor){
+    spoorPijl.set(null);
     (spoor === 'bpz')
       ? (bpz) 
         ? bpz = false 

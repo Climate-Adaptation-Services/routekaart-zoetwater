@@ -1,5 +1,7 @@
 <script>
-  import { procesSelection, timeScale, procesColors } from "$lib/stores";
+// @ts-nocheck
+
+  import { procesSelection, timeScale, procesColors, spoorPijl } from "$lib/stores";
   import Product from "./Product.svelte";
   import { select } from "d3";
 
@@ -25,7 +27,9 @@
 </script>
 
 {#if $timeScale}
-  <svg class='procesSVG' viewBox="0 0 {w} {h}" on:click={() => procesSelection.set(null)}>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
+  <svg class='procesSVG' viewBox="0 0 {w} {h}" on:click={() => {procesSelection.set(null); spoorPijl.set(null)}}>
     <defs>
       <filter id='glow'>
         <feGaussianBlur stdDeviation='2.5' result='coloredBlur'/>
@@ -49,9 +53,12 @@
     <g transform='translate({0},{margin.top})'>
       {#each data.proces as proces, i}
         <g transform='translate({0},{i*bandStep})' class={'proces-g proces-g-' + proces['procID']}
-          opacity={($procesSelection && $procesSelection !== proces['procID'])
+          opacity={($procesSelection && $procesSelection !== proces['procID'] || ($spoorPijl && proces['procID'] !== data.product.filter(d => d['prodID'] === $spoorPijl['prodID'])[0]['procID']))
             ? 0.2 
             : 1}>
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
+          <!-- svelte-ignore a11y-mouse-events-have-key-events -->
           <rect 
             class={'procesrect proces-' + proces['procID']}
             x={$timeScale(new Date(proces['Datum start']+'-01'))}

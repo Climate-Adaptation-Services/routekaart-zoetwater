@@ -21,9 +21,7 @@
 
   const dataSpoor = (spoor === 'bpz') ? data.bpz : data.omgeving;
 
-
   function clickCircle(spoorCircle){
-    console.log(spoorCircle)
     if(spoorCircle['prodID'] && spoorCircle['prodID'].length === 6){
       spoorPijl.set(spoorCircle)
     }else{
@@ -71,7 +69,7 @@
             on:click={() => clickCircle(spoorCircle)}
           />
           {#if uitgeklapt}
-            <text text-anchor='middle' font-size={w*0.006} style='fill:rgb(50,50,50)'
+            <text text-anchor='middle' font-size={2 + w*0.006} style='fill:rgb(50,50,50)'
               y='1.5em'>
               {#each spoorCircle['Korte titel'].split(' ') as word}
                 <tspan dy='1em' x={0}>{word}</tspan>
