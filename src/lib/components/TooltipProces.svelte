@@ -78,7 +78,7 @@
       {proces['Volledige titel']}
     </h3>
     <p class='kortbeschrijving' style='font-size:16px'>
-      {proces['Korte beschrijving']}
+      {@html proces['Korte beschrijving']}
     </p>
     <hr>
     <div class='proces-extra-info'>
@@ -176,7 +176,7 @@
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     padding:20px;
-    max-width: 550px;
+    max-width: 450px;
     text-align: center;
     color: #635F5D;
   }

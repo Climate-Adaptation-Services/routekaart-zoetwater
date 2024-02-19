@@ -70,7 +70,7 @@
           />
           {#if uitgeklapt}
             <text text-anchor='middle' font-size={3 + w*0.006} style='fill:rgb(50,50,50)'
-              y='1.5em'>
+              y={(spoorCircle['Korte titel'] === "PPLG's (concept)") ? '-3.6em' : '1.5em'}>
               {#each spoorCircle['Korte titel'].split(' ') as word}
                 <tspan dy='1em' x={0}>{word}</tspan>
               {/each}
