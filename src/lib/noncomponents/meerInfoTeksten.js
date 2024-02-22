@@ -60,7 +60,7 @@ Het programmateam voert een KPA uit die uit drie onderdelen bestaat:
   <li>Hydrologische gevoeligheidsanalyses naar het effect op de resterende DPZW-opgave van verschillende varianten van de Klimaatbestendige Zoetwatervoorziening Hoofdwatersysteem (KZH), het Peilbesluit IJsselmeergebied als onderdeel van het Deltaprogramma IJsselmeergebied (DPIJ), en de afvoerverdeling en rivierbodemligging als uitkomst van het programma Integraal Riviermanagement (IRM). Deze resterende DPZW-opgave dient ingevuld te worden met zoetwatermaatregelen aangedragen door zoetwaterregio’s en RWS, zie onderstaand figuur.</li>
 </ol>
 
-<img src='/images/Picture1.png' style='width:100%'/>
+<img src='/images/Picture1.png' style='width:100%; margin:20px 0px 20px 0px'/>
 
 De resultaten van de KPA worden middels een regioronde gepresenteerd in de vorm van een landelijk beeld aangevuld met een toespitsing op alle 6 zoetwaterregio’s en het Hoofdwatersysteem (HWS). Indien gewenst kunnen regio’s in aanvulling op de KPA een regionale knelpuntenanalyse uitvoeren.
 `,
@@ -147,7 +147,7 @@ De SEA van individuele maatregelen biedt inzicht in het maatschappelijk effect v
 <h4 style='color:rgb(39, 77, 141)'>Aanpak</h4> 
 De sociaaleconomische analyse van individuele maatregelen omvat in aanloop naar DPZW fase 3 een kosteneffectiviteitsanalyse (KEA), een maatschappelijke kosten-baten analyse (MKBA) en een multicriteria-analyse (MCA) . Op basis van de informatie in factsheet 3 (stap 6) zet het programmateam per maatregel de kosten af tegen het doelbereik (kosteneffectiviteit) en tegen de effecten op zoetwater gebruiksfuncties en de maatschappij (kosten-baten saldo). Ook wordt op basis van deze informatie per maatregel een MCA-totaalscore bepaald. Daarbij wordt gescoord op alle eerder vastgestelde beoordelingscriteria (incl. toepassing van wegingsfactoren) met uitzondering van het doelbereik, de kosten en de effecten op zoetwater gebruiksfuncties, zie tabel hieronder.
 
-<img src='/images/table1.png' style='width:100%'/>
+<img src='/images/table1.png' style='width:100%; margin:20px 0px 20px 0px'/>
 
 `,
 
@@ -213,7 +213,7 @@ De SEA van maatregelpakketten ondersteunt de zoetwaterregio’s en RWS bij het z
 <h4 style='color:rgb(39, 77, 141)'>Aanpak</h4> 
 Het programmateam vergelijkt het effect van het voorkeurspakket met het effect van het nulalternatief en de drie beleidsalternatieven aan de hand van de daarvoor geldende richtlijnen. Daartoe worden voor ieder pakket het doelbereik, de kosten, de effecten op zoetwater gebruiksfuncties en de score op de overige beoordelingscriteria (zonder weging) in beeld gebracht, zie onderstaande tabel. Het Centraal Planbureau (CPB) voorziet de SEA van een second opinion over de kwaliteit van de analyse.
 
-<br><img src='/images/table2.png' style='width:100%'/>
+<br><img src='/images/table2.png' style='width:100%; margin:20px 0px 20px 0px'/>
 
 `,
 }
