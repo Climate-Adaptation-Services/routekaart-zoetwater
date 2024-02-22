@@ -2,4 +2,11 @@
   export let message = 'Hi';
 </script>
 
-<p>{@html message}</p>
+<div>{@html message}</div>
+
+<style>
+  div{
+    color:#2c2b2b;
+  }
+
+</style>
