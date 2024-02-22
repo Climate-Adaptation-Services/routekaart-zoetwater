@@ -1,15 +1,21 @@
 <script>
 // @ts-nocheck
 
-  import { procesSelection } from "$lib/stores";
+  import { procesSelection, timeScale, modal } from "$lib/stores";
   import { onMount } from "svelte";
-  import { timeScale } from "$lib/stores";
+  import { meerInfoTeksten } from "$lib/noncomponents/meerInfoTeksten";
 
+  import { bind } from 'svelte-simple-modal';
+  import MeerInfo from './MeerInfo.svelte';
+  
+  const showModal = (titel) => {
+    modal.set(bind(MeerInfo, { message: meerInfoTeksten[titel] }))
+  };
+  
   export let procesHeight
   export let bandStep
   export let data
   export let margin
-
 
   const proces = data.proces.filter(d => d['procID'] === $procesSelection)[0]
 
@@ -67,33 +73,36 @@
     '01':'Jan', '02':'Feb', '03':'Maa', '04':'Apr', '05':'Mei', '06':'Jun', '07':'Jul', '08':'Aug', '09':'Sep', '10':'Okt', '11':'Nov', '12':'Dec'
   }
 
+  $: imageWidth = procesHeight * 1.5
+  $: subTitleFontSize = procesHeight*0.9
+
 </script>
 
 <div class='tooltip-proces' 
   style='transform:translate({divOffsetX}px,{divOffsetY}px);
     left:{$timeScale(new Date(proces['Datum start']+'-01'))}px; top:{procesIndex*bandStep - bandStep + margin.top}px'>
-
   <div class='tooltipContent' style='transform:translate({(tooltipLocation === 'bottom') ? offsetX : 0}px,{(tooltipLocation === 'bottom') ? offsetY : 0}px)' >
-    <h3>
+    <p style='font-size:{subTitleFontSize*1.2}px; margin-bottom:0'>
       {proces['Volledige titel']}
-    </h3>
-    <p class='kortbeschrijving' style='font-size:16px'>
+    </p>
+    <p class='kortbeschrijving' style='font-size:{subTitleFontSize-2}px'>
       {@html proces['Korte beschrijving']}
     </p>
+    <button style='cursor:pointer; margin-bottom:10px; pointer-events:auto' on:click={() => showModal(proces['Volledige titel'])}>Meer info</button>
     <hr>
     <div class='proces-extra-info'>
-      <img class='extra-info-imgs' src="/images/schedule.png" style='width:50px'/>
-      <p style='font-size:18px'>{maand[proces['Datum start'].split('-')[1]] + ' ' + proces['Datum start'].split('-')[0] + ' -- ' + maand[proces['Datum eind'].split('-')[1]] + ' ' + proces['Datum eind'].split('-')[0]}</p>
+      <img class='extra-info-imgs' src="/images/schedule.png" style='width:{imageWidth}px'/>
+      <p style='font-size:{subTitleFontSize}px'>{maand[proces['Datum start'].split('-')[1]] + ' ' + proces['Datum start'].split('-')[0] + ' -- ' + maand[proces['Datum eind'].split('-')[1]] + ' ' + proces['Datum eind'].split('-')[0]}</p>
     </div>
     <div class='proces-extra-info'>
-      <img class='extra-info-imgs' src="/images/team.png" style='width:50px'/>
-      <p style='font-size:18px'>{proces['Wie']}</p>
+      <img class='extra-info-imgs' src="/images/team.png" style='width:{imageWidth}px'/>
+      <p style='font-size:{subTitleFontSize}px'>{proces['Wie']}</p>
     </div>
     {#if producten.length > 0}
       <div class='proces-extra-info'>
         {#each producten as product}
-          <img class='extra-info-imgs' src="/images/ruitje.png" style='width:50px'/>
-          <p style='font-size:18px'>{product['Volledige omschrijving']}</p>
+          <img class='extra-info-imgs' src="/images/ruitje.png" style='width:{imageWidth}px'/>
+          <p style='font-size:{subTitleFontSize}px'>{product['Volledige omschrijving']}</p>
         {/each}
       </div>
     {/if}
@@ -148,13 +157,13 @@
   .tooltip-proces{
     position: absolute;
     z-index: 500;
-    pointer-events: none;
     width:800px;
     height:800px;
     /* stroke:rgb(170,170,170); */
     stroke-dasharray:7 3; 
     stroke-width: 1;
     stroke-opacity: 0.6;
+    pointer-events: none;
   }
 
   .g-tooltip path, line{
@@ -175,8 +184,8 @@
     flex-direction: column;
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    padding:20px;
-    max-width: 450px;
+    padding:5px 15px 10px 15px;
+    max-width: 420px;
     text-align: center;
     color: #635F5D;
   }
@@ -216,6 +225,10 @@
 
   .proces-extra-info{
     color:rgb(100,100,100)
+  }
+
+  hr{
+    margin:0
   }
 
 </style>

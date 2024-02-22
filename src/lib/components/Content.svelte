@@ -1,7 +1,8 @@
 <script>
-  import { spoorPijl } from "$lib/stores";
+  import { spoorPijl, modal } from "$lib/stores";
   import Processen from "./Processen.svelte";
   import Spoor from "./Spoor.svelte";
+  import Modal from 'svelte-simple-modal';
 
   export let w;
   export let h;
@@ -41,6 +42,7 @@
 
 
 <div class='content' style='left:{contentMargin}px;top:{contentMargin}px;height:{contentHeight}px; width:{contentWidth}px'>
+
   <div class='processen' style='height:{procesHeight}px'>
     <Processen {data} w={contentWidth} h={procesHeight} {margin} {innerHeight} {bandStep}/>
   </div>
@@ -53,6 +55,9 @@
   {/each}
   <div class='quarter-padding' style='height:{quarterPadding}px'>
   </div>
+
+  <Modal show={$modal} style='position:absolute; left:0'></Modal>
+
 </div>
 
 <style>
