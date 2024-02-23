@@ -1,7 +1,7 @@
 <script>
 // @ts-nocheck
 
-  import { procesSelection, timeScale, procesColors, spoorPijl } from "$lib/stores";
+  import { procesSelection, timeScale, procesColors, spoorPijl, spoorSelection } from "$lib/stores";
   import Product from "./Product.svelte";
   import { select } from "d3";
 
@@ -20,6 +20,7 @@
     select('.proces-' + proces['procID'])
       .style('stroke', 'none')
 
+    spoorSelection.set(null)
     procesSelection.set(null)
     setTimeout(() => { procesSelection.set(proces['procID']) }, 1);
   }
@@ -29,7 +30,7 @@
 {#if $timeScale}
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <svg class='procesSVG' viewBox="0 0 {w} {h}" on:click={() => {procesSelection.set(null); spoorPijl.set(null)}}>
+  <svg class='procesSVG' viewBox="0 0 {w} {h}" on:click={() => {procesSelection.set(null); spoorPijl.set(null); spoorSelection.set(null)}}>
     <defs>
       <filter id='glow'>
         <feGaussianBlur stdDeviation='2.5' result='coloredBlur'/>

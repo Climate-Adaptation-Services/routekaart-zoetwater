@@ -1,5 +1,5 @@
 <script>
-  import { timeScale, spoorPijl } from "$lib/stores"
+  import { timeScale, spoorPijl, spoorSelection, procesSelection } from "$lib/stores"
   import { selectAll } from "d3";
   import { afterUpdate } from "svelte";
 
@@ -23,9 +23,12 @@
 
   function clickCircle(spoorCircle){
     if(spoorCircle['prodID'] && spoorCircle['prodID'].length === 6){
+      procesSelection.set(null)
       spoorPijl.set(spoorCircle)
+      spoorSelection.set(spoorCircle)
     }else{
       spoorPijl.set(null)
+      spoorSelection.set(null)
     }
   }
 
@@ -59,7 +62,7 @@
               stroke={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} stroke-width='3' marker-start='url(#arrow{spoor})'></line>
           {/if}
         <circle 
-            class='spoor-circle circle-{spoorCircle['Korte titel'].replaceAll(' ','')}}'
+            class='spoor-circle circle-{spoorCircle['Korte titel'].replaceAll(' ','')}'
             cx={0}
             cy={0}
             r={hIngeklapt*0.25}

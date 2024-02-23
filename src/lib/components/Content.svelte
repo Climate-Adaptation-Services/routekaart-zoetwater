@@ -55,7 +55,7 @@
     </div>
   {/each}
   {#if $spoorSelection !== null}
-    <TooltipSpoor />
+    <TooltipSpoor {w} {h} />
   {/if}
   <div class='quarter-padding' style='height:{quarterPadding}px'>
   </div>
