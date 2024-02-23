@@ -1,8 +1,9 @@
 <script>
-  import { spoorPijl, modal } from "$lib/stores";
+  import { spoorPijl, modal, spoorSelection } from "$lib/stores";
   import Processen from "./Processen.svelte";
   import Spoor from "./Spoor.svelte";
   import Modal from 'svelte-simple-modal';
+  import TooltipSpoor from "./TooltipSpoor.svelte";
 
   export let w;
   export let h;
@@ -53,6 +54,9 @@
         {clickSpoor} {procesHeight} {bpzHeight} {bandStep} {margin}/>
     </div>
   {/each}
+  {#if $spoorSelection !== null}
+    <TooltipSpoor />
+  {/if}
   <div class='quarter-padding' style='height:{quarterPadding}px'>
   </div>
 
