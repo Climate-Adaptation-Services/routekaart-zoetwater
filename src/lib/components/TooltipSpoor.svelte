@@ -23,6 +23,7 @@
     max-width:350px;
     background-color: #F4EEE6;
     padding: 0px 10px 0px 10px;
+    box-shadow: rgba(0, 0, 0, 0.26) 0px 22px 70px 4px;
   }
 
 </style>
