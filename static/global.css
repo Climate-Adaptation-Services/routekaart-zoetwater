@@ -25,3 +25,8 @@ body{
 text{
   fill:#8E8883
 }
+
+ol{
+  margin-bottom:0;
+  text-align: left;
+}
