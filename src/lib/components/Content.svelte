@@ -30,6 +30,7 @@
 
   function clickSpoor(spoor){
     spoorPijl.set(null);
+    spoorSelection.set(null);
     (spoor === 'bpz')
       ? (bpz) 
         ? bpz = false 

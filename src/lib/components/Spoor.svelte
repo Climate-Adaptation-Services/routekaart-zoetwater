@@ -25,11 +25,11 @@
     if(spoorCircle['prodID'] && spoorCircle['prodID'].length === 6){
       procesSelection.set(null)
       spoorPijl.set(spoorCircle)
-      spoorSelection.set(spoorCircle)
     }else{
       spoorPijl.set(null)
       spoorSelection.set(null)
     }
+    spoorSelection.set(spoorCircle)
   }
 
   $: spoorPijlProduct = ($spoorPijl !== null) ? data.product.filter(d => d.prodID === $spoorPijl.prodID)[0] : null
