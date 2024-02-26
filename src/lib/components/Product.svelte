@@ -1,5 +1,5 @@
 <script>
-  import { timeScale } from "$lib/stores";
+  import { timeScale, procesColors } from "$lib/stores";
   import GroenePijl from "./GroenePijl.svelte";
 
   export let product;
@@ -7,6 +7,8 @@
   export let data;
   export let bandStep;
   export let j;
+
+  const proces = data.proces.filter(d => d['procID'] === product['procID'])[0]
 
 </script>
 
@@ -19,7 +21,9 @@
     y={0}
     width={procesHeight*Math.sin(0.25*Math.PI)}
     height={procesHeight*Math.sin(0.25*Math.PI)}
-    fill='rgb(245,250,240)'
+    fill={(new Date() < new Date(product['Datum'])) ? 'rgb(245,250,240)' : $procesColors[proces['Wie']]}
+    stroke={$procesColors[proces['Wie']]}
+    stroke-width='2'
     style='-webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .3));'
   />
   {#each data.pijlen.filter(d => d['prodID'] === product['prodID']) as pijl}

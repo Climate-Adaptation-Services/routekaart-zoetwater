@@ -73,8 +73,8 @@
     '01':'Jan', '02':'Feb', '03':'Maa', '04':'Apr', '05':'Mei', '06':'Jun', '07':'Jul', '08':'Aug', '09':'Sep', '10':'Okt', '11':'Nov', '12':'Dec'
   }
 
-  $: imageWidth = procesHeight * 1.5
-  $: subTitleFontSize = procesHeight*0.9
+  $: imageWidth = 27
+  $: subTitleFontSize = 14
 
 </script>
 
