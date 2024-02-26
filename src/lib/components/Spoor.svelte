@@ -67,7 +67,7 @@
             cy={0}
             r={hIngeklapt*0.25}
             fill='white'
-            stroke={(spoorCircle['Type'] === 'Ter bespreking') ? 'grey' : (spoor === 'bpz') ? '#EA7722' : '#6FAD33'}
+            stroke={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'}
             stroke-width='5'
             on:click={() => clickCircle(spoorCircle)}
           />

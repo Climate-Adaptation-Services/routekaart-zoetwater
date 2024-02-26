@@ -220,7 +220,7 @@
   }
 
   .kortbeschrijving{
-    color: #8E8883
+    color: #7b7672
   }
 
   .proces-extra-info{
