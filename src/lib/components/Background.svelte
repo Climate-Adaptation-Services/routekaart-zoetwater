@@ -71,6 +71,7 @@
         {#each fasen as fase}
           <g class='fases' transform='translate({fase.tijd[0]}, -9)'>
             <text x={(fase.tijd[1]-fase.tijd[0])/2} y='-12' text-anchor='middle' cursor='default'>{fase.naam}</text>
+            <image xlink:href='/images/info.png' width='20px' x={(fase.tijd[1]-fase.tijd[0])/2 + fase.naam.length*4.3} y='-28' opacity='0.5'/>
             <line x1={20} x2={fase.tijd[1]-fase.tijd[0]-20} y1={0} y2={0} stroke={($faseHover && $faseHover.naam === fase.naam) ? 'steelblue' : 'lightgrey'} marker-end={($faseHover && $faseHover.naam === fase.naam) ? "url(#arrow-hover)" : "url(#arrow)"} marker-start={($faseHover && $faseHover.naam === fase.naam) ? "url(#arrow-hover)" : "url(#arrow)"} stroke-width='5'></line>
             <rect class='faseboundary' height={svgHeight} width={fase.tijd[1]-fase.tijd[0]} x={0} y='10' fill='none' stroke={($faseHover !== null && $faseHover.naam === fase.naam) ? 'steelblue' : 'none'}/>
             <rect width={fase.tijd[1]-fase.tijd[0]} x={0} height={50} y='-40' on:mouseover={() => faseMouseOver(fase)} on:mouseout={() => faseMouseOut(fase)} fill-opacity='0'></rect>

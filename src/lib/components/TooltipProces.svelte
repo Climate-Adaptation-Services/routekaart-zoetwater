@@ -92,7 +92,7 @@
     <hr>
     <div class='proces-extra-info'>
       <img class='extra-info-imgs' src="/images/schedule.png" style='width:{imageWidth}px'/>
-      <p style='font-size:{subTitleFontSize}px'>{maand[proces['Datum start'].split('-')[1]] + ' ' + proces['Datum start'].split('-')[0] + ' -- ' + maand[proces['Datum eind'].split('-')[1]] + ' ' + proces['Datum eind'].split('-')[0]}</p>
+      <p style='font-size:{subTitleFontSize}px'>{maand[proces['Datum start'].split('-')[1]] + ' ' + proces['Datum start'].split('-')[0] + ' - ' + maand[proces['Datum eind'].split('-')[1]] + ' ' + proces['Datum eind'].split('-')[0]}</p>
     </div>
     <div class='proces-extra-info'>
       <img class='extra-info-imgs' src="/images/team.png" style='width:{imageWidth}px'/>

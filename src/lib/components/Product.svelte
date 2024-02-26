@@ -21,7 +21,7 @@
     y={0}
     width={procesHeight*Math.sin(0.25*Math.PI)}
     height={procesHeight*Math.sin(0.25*Math.PI)}
-    fill={(new Date() < new Date(product['Datum'])) ? 'rgb(245,250,240)' : $procesColors[proces['Wie']]}
+    fill={(new Date() < new Date(product['Datum'])) ? 'rgb(245,250,240)' : '#54e336'}
     stroke={$procesColors[proces['Wie']]}
     stroke-width='2'
     style='-webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .3));'
