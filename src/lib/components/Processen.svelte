@@ -62,10 +62,10 @@
           <!-- svelte-ignore a11y-mouse-events-have-key-events -->
           <rect 
             class={'procesrect proces-' + proces['procID']}
-            x={$timeScale(new Date(proces['Datum start']+'-01'))}
+            x={$timeScale(new Date(proces['Datum start']))}
             y={0} 
             height={procesHeight}
-            width={$timeScale(new Date(proces['Datum eind']+'-30')) - $timeScale(new Date(proces['Datum start']+'-01')) - 2} 
+            width={$timeScale(new Date(proces['Datum eind'])) - $timeScale(new Date(proces['Datum start'])) - 2} 
             fill={$procesColors[proces['Wie']]}
             style='filter:url(#glow)'
             on:click={() => clickProces(proces)}
@@ -78,7 +78,7 @@
 
           <text 
             class='proces-titel'
-            x={$timeScale(new Date(proces['Datum start']+'-01')) + ($timeScale(new Date(proces['Datum eind']+'-30')) - $timeScale(new Date(proces['Datum start']+'-01')) - 2)/2}
+            x={$timeScale(new Date(proces['Datum start'])) + ($timeScale(new Date(proces['Datum eind'])) - $timeScale(new Date(proces['Datum start'])) - 2)/2}
             dx={(proces['Korte titel'] === 'Ontwikkelpadenkaarten') ? 60 : 0}
             y='1.1em'
             font-size={h*0.02}

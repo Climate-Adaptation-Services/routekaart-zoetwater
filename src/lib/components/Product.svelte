@@ -13,7 +13,7 @@
 </script>
 
 
-<g class='product' transform='translate({$timeScale(new Date(product['Datum']+'-30'))-1},0)'>
+<g class='product' transform='translate({$timeScale(new Date(product['Datum']))-1},0)'>
   <rect 
     transform='rotate(45)'
     class={'product-' + product['prodID'] + '-' + j}
@@ -21,11 +21,14 @@
     y={0}
     width={procesHeight*Math.sin(0.25*Math.PI)}
     height={procesHeight*Math.sin(0.25*Math.PI)}
-    fill={(new Date() < new Date(product['Datum'])) ? 'rgb(245,250,240)' : '#54e336'}
+    fill={'rgb(245,250,240)'}
     stroke={$procesColors[proces['Wie']]}
     stroke-width='2'
     style='-webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .3));'
   />
+  {#if product['Weblink']}
+    <image xlink:href='/images/check.png' width={procesHeight+5} x={-procesHeight*0.45} y='-7'/>
+  {/if}
   {#each data.pijlen.filter(d => d['prodID'] === product['prodID']) as pijl}
     <GroenePijl {pijl} {procesHeight} {bandStep} {data}/>
   {/each}

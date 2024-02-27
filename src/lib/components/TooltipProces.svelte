@@ -102,7 +102,14 @@
       <div class='proces-extra-info'>
         {#each producten as product}
           <img class='extra-info-imgs' src="/images/ruitje.png" style='width:{imageWidth}px'/>
-          <p style='font-size:{subTitleFontSize}px'>{product['Volledige omschrijving']}</p>
+          <p style='font-size:{subTitleFontSize}px'>
+            
+            {#if product['Weblink']}
+              <a href={[product['Weblink']]} target='_blank'>{product['Volledige omschrijving']}</a>
+            {:else}
+              {product['Volledige omschrijving']}
+            {/if}
+          </p>
         {/each}
       </div>
     {/if}
@@ -188,6 +195,7 @@
     max-width: 420px;
     text-align: center;
     color: #635F5D;
+    pointer-events:auto;
   }
 
   svg{

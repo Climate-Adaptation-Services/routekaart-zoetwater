@@ -56,7 +56,7 @@
     <g class='uitgeklapt-spoor' style='opacity:{(uitgeklapt) ? 1 : 0}; visibility:{(uitgeklapt) ? 'visible' : 'hidden'}; }'>
       <rect fill={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} width={w} height={hIngeklapt*0.35} x={0} y={hIngeklapt*0.35}/>
       {#each dataSpoor as spoorCircle}
-        <g transform='translate({$timeScale(new Date(spoorCircle['Datum']+'-30'))},{hUitgeklapt*0.2})'>
+        <g transform='translate({$timeScale(new Date(spoorCircle['Datum']))},{hUitgeklapt*0.2})'>
           {#if uitgeklapt && $spoorPijl === spoorCircle && spoor === 'bpz'}
             <line x1={0} x2={$timeScale(new Date(spoorPijlProduct.Datum)) - $timeScale(new Date(spoorCircle.Datum))} y1={0} y2={-margin.bottom - (data.proces.length - spoorPijlProcesNummer)*bandStep - bandStep} 
               stroke={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} stroke-width='3' marker-start='url(#arrow{spoor})'></line>
@@ -73,7 +73,7 @@
           />
           {#if uitgeklapt}
             <text text-anchor='middle' font-size={3 + w*0.006} style='fill:rgb(50,50,50)'
-              y={(spoorCircle['Korte titel'] === "PPLG's (concept)") ? '-3.6em' : '1.5em'}>
+              y={(["PPLG's (concept)", 'Beoordelingscriteria', "Deltascenario's"].includes(spoorCircle['Korte titel'])) ? '-3.2em' : '1.5em'}>
               {#each spoorCircle['Korte titel'].split(' ') as word}
                 <tspan dy='1em' x={0}>{word}</tspan>
               {/each}
