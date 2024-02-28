@@ -14,7 +14,7 @@
 
 </script>   
 
-<div class='tooltip-spoor' style='left:{(bbox.left > w*0.6) ? bbox.left - 500 : bbox.left}px; top:{bbox.top-250}px; border:5px solid {(spoor === 'bpz') ? '#EA7722' : '#6FAD33'}'>
+<div class='tooltip-spoor' style='left:{(bbox.left > w*0.6) ? bbox.left - 500 : bbox.left + 50}px; top:{bbox.top-350}px; border:5px solid {(spoor === 'bpz') ? '#EA7722' : '#6FAD33'}'>
   <h4>{$spoorSelection['Volledige titel']}</h4>
   <p style='font-size:14px'>{$spoorSelection['Korte beschrijving']}</p>
   <p style='font-size:12px; width:50%; float:left'><em>{($spoorSelection['Type']) ? $spoorSelection['Type'] : ''}</em></p>

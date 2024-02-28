@@ -22,7 +22,7 @@
   const dataSpoor = (spoor === 'bpz') ? data.bpz : data.omgeving;
 
   function clickCircle(spoorCircle){
-    if(spoorCircle['prodID'] && spoorCircle['prodID'].length === 6){
+    if(spoorCircle['prodID']){
       procesSelection.set(null)
       spoorPijl.set(spoorCircle)
     }else{
@@ -32,9 +32,17 @@
     spoorSelection.set(spoorCircle)
   }
 
-  $: spoorPijlProduct = ($spoorPijl !== null) ? data.product.filter(d => d.prodID === $spoorPijl.prodID)[0] : null
-  $: spoorPijlProces = (spoorPijlProduct !== null) ? data.proces.filter(d => d.procID === spoorPijlProduct.procID)[0] : null
-  $: spoorPijlProcesNummer = (spoorPijlProces !== null) ? parseInt(spoorPijlProces.procID.split('proc')[1]) : null
+  $: if($spoorPijl){console.log($spoorPijl.prodID.split(','))}
+  
+  function getProduct(prodID){
+    return data.product.filter(d => d.prodID === prodID)[0]
+  }
+
+  function getProcesNummer(product){
+    console.log(product)
+    const spoorPijlProces = data.proces.filter(d => d.procID === product.procID)[0]
+    return parseInt(spoorPijlProces.procID.split('proc')[1])
+  }
 
 </script> 
 
@@ -58,8 +66,10 @@
       {#each dataSpoor as spoorCircle}
         <g transform='translate({$timeScale(new Date(spoorCircle['Datum']))},{hUitgeklapt*0.2})'>
           {#if uitgeklapt && $spoorPijl === spoorCircle && spoor === 'bpz'}
-            <line x1={0} x2={$timeScale(new Date(spoorPijlProduct.Datum)) - $timeScale(new Date(spoorCircle.Datum))} y1={0} y2={-margin.bottom - (data.proces.length - spoorPijlProcesNummer)*bandStep - bandStep} 
-              stroke={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} stroke-width='3' marker-start='url(#arrow{spoor})'></line>
+            {#each $spoorPijl.prodID.split(',') as prodID}
+              <line x1={0} x2={$timeScale(new Date(getProduct(prodID).Datum)) - $timeScale(new Date(spoorCircle.Datum))} y1={0} y2={-margin.bottom - (data.proces.length - getProcesNummer(getProduct(prodID)))*bandStep - bandStep} 
+                stroke={(spoor === 'bpz') ? '#EA7722' : '#6FAD33'} stroke-width='3' marker-start='url(#arrow{spoor})'></line>
+            {/each}
           {/if}
         <circle 
             class='spoor-circle circle-{spoorCircle['Korte titel'].replaceAll(' ','')}'

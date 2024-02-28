@@ -54,7 +54,13 @@
     <g transform='translate({0},{margin.top})'>
       {#each data.proces as proces, i}
         <g transform='translate({0},{i*bandStep})' class={'proces-g proces-g-' + proces['procID']}
-          opacity={($procesSelection && $procesSelection !== proces['procID'] || ($spoorPijl && proces['procID'] !== data.product.filter(d => d['prodID'] === $spoorPijl['prodID'])[0]['procID']))
+          opacity={(
+            $procesSelection && 
+            $procesSelection !== proces['procID'] || 
+            (
+              $spoorPijl && 
+              proces['procID'] !== data.product.filter(d => $spoorPijl['prodID'].split(',').includes(d['prodID']))
+            ))
             ? 0.2 
             : 1}>
           <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -79,7 +85,7 @@
           <text 
             class='proces-titel'
             x={$timeScale(new Date(proces['Datum start'])) + ($timeScale(new Date(proces['Datum eind'])) - $timeScale(new Date(proces['Datum start'])) - 2)/2}
-            dx={(proces['Korte titel'] === 'Ontwikkelpadenkaarten') ? 60 : 0}
+            dx={(proces['Korte titel'] === 'Ontwikkelpadenkaarten') ? 110 : 0}
             y='1.1em'
             font-size={h*0.02}
             text-anchor='middle'
