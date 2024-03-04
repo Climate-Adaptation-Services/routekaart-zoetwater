@@ -23,7 +23,7 @@
 
   const producten = data.product.filter(prod => prod['procID'] === proces['procID'])
 
-  const procesWidth = $timeScale(new Date(proces['Datum eind']+'-30'))-$timeScale(new Date(proces['Datum start']+'-01'))
+  const procesWidth = $timeScale(new Date(proces['Datum eind']))-$timeScale(new Date(proces['Datum start']))
 
   const tooltipLocation = (procesIndex > 10)
     ? 'top'
