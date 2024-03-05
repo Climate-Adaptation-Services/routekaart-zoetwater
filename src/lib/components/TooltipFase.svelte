@@ -11,7 +11,7 @@
 </script>
 
 
-<div class='fase-tooltip' style='width:{tooltipWidth}px; left:{contentMargin + $faseHover.tijd[0]+3}px; top:{contentMargin+3}px; padding:40px {padding}px 40px {padding}px'>
+<div class='fase-tooltip' style='width:{tooltipWidth}px; height:{h-84}px; left:{contentMargin + $faseHover.tijd[0]+3}px; top:{contentMargin+3}px; padding:40px {padding}px 40px {padding}px'>
   <p style='font-size:{textSize}px'>{$faseHover.beschrijving}</p>
 </div>
 
