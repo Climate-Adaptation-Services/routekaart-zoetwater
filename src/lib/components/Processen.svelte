@@ -59,7 +59,8 @@
             $procesSelection !== proces['procID'] || 
             (
               $spoorPijl && 
-              proces['procID'] !== data.product.filter(d => $spoorPijl['prodID'].split(',').includes(d['prodID']))
+              // dit is ingewikkeld
+              !data.product.filter(d => $spoorPijl['prodID'].split(',').includes(d['prodID'])).map(d => d['procID']).includes(proces['procID'])
             ))
             ? 0.2 
             : 1}>

@@ -31,15 +31,12 @@
     }
     spoorSelection.set(spoorCircle)
   }
-
-  $: if($spoorPijl){console.log($spoorPijl.prodID.split(','))}
   
   function getProduct(prodID){
     return data.product.filter(d => d.prodID === prodID)[0]
   }
 
   function getProcesNummer(product){
-    console.log(product)
     const spoorPijlProces = data.proces.filter(d => d.procID === product.procID)[0]
     return parseInt(spoorPijlProces.procID.split('proc')[1])
   }
