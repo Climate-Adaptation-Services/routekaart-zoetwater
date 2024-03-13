@@ -41,6 +41,24 @@
     return parseInt(spoorPijlProces.procID.split('proc')[1])
   }
 
+  function getSpoorText(text){
+    const parts = []
+    let part = ''
+    text.split(' ').forEach(word => {
+      if(part.length === 0){
+        part = word
+      }else if(part.length + word.length < 15){
+        part += ' ' + word
+      }else{
+        parts.push(part)
+        part = word
+      }
+    });
+    parts.push(part)
+    console.log(text.split(' '), parts)
+    return parts
+  }
+
 </script> 
 
 <svg class='svg-{spoor}' style='position:absolute; top:0; height:100%; width:100%; pointer-events:none'>
@@ -81,8 +99,8 @@
           {#if uitgeklapt}
             <text text-anchor='middle' font-size={3 + w*0.006} style='fill:rgb(50,50,50)'
               y={(["PPLG's (concept)", 'Beoordelingscriteria', "Deltascenario's"].includes(spoorCircle['Korte titel'])) ? '-3.2em' : '1.5em'}>
-              {#each spoorCircle['Korte titel'].split(' ') as word}
-                <tspan dy='1em' x={0}>{word}</tspan>
+              {#each getSpoorText(spoorCircle['Korte titel']) as part}
+                <tspan dy='1em' x={0}>{part}</tspan>
               {/each}
             </text>
           {/if}
