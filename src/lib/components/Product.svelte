@@ -13,7 +13,7 @@
 </script>
 
 
-<g class='product' transform='translate({$timeScale(new Date(product['Datum']))-1},0)'>
+<g class={'product-g-' + product['prodID']} transform='translate({$timeScale(new Date(product['Datum']))-1},0)'>
   <rect 
     transform='rotate(45)'
     class={'product-' + product['prodID'] + '-' + j}

@@ -6,7 +6,12 @@
 
   $: spoor = ($spoorSelection['bpzID']) ? 'bpz' : 'omgeving';
   
-  $: bbox = document.getElementsByClassName(`circle-${$spoorSelection['Korte titel'].replaceAll(' ','')}`)[0].getBoundingClientRect()
+  $: bboxSpoorCircle = document.getElementsByClassName(`circle-${$spoorSelection['Korte titel'].replaceAll(' ','')}`)[0].getBoundingClientRect()
+  
+  $: productID = $spoorSelection['prodID'].split(',')[0]
+  $: bboxProduct = (productID)
+    ? document.getElementsByClassName('product-g-' + productID)[0].getBoundingClientRect()
+    : null
 
   const maand = {
     '01':'Januari', '02':'Februari', '03':'Maart', '04':'April', '05':'Mei', '06':'Juni', '07':'Juli', '08':'Augustus', '09':'September', '10':'Oktober', '11':'November', '12':'December'
@@ -14,7 +19,7 @@
 
 </script>   
 
-<div class='tooltip-spoor' style='left:{(bbox.left > w*0.6) ? bbox.left - 500 : bbox.left + 50}px; top:{bbox.top-350}px; border:5px solid {(spoor === 'bpz') ? '#EA7722' : '#6FAD33'}'>
+<div class='tooltip-spoor' style='left:{(bboxSpoorCircle.left > w*0.6) ? bboxSpoorCircle.left - 500 : bboxSpoorCircle.left + 50}px; top:{(bboxProduct) ? bboxProduct.top+30 : bboxSpoorCircle.top-350}px; border:5px solid {(spoor === 'bpz') ? '#EA7722' : '#6FAD33'}'>
   <h4>{$spoorSelection['Volledige titel']}</h4>
   <p style='font-size:14px'>{$spoorSelection['Korte beschrijving']}</p>
   <p style='font-size:12px; width:50%; float:left'><em>{($spoorSelection['Type']) ? $spoorSelection['Type'] : ''}</em></p>
