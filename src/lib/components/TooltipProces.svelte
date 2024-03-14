@@ -80,7 +80,7 @@
 
 <div class='tooltip-proces' 
   style='transform:translate({divOffsetX}px,{divOffsetY}px);
-    left:{$timeScale(new Date(proces['Datum start']+'-01'))}px; top:{procesIndex*bandStep - bandStep + margin.top}px'>
+    left:{$timeScale(new Date(proces['Datum start']))}px; top:{procesIndex*bandStep - bandStep + margin.top}px'>
   <div class='tooltipContent' style='transform:translate({(tooltipLocation === 'bottom') ? offsetX : 0}px,{(tooltipLocation === 'bottom') ? offsetY : 0}px)' >
     <p style='font-size:{subTitleFontSize*1.2}px; margin-bottom:0'>
       {proces['Volledige titel']}

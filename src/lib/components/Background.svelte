@@ -30,7 +30,7 @@
     data.fases.forEach(fase => {
       fasen.push({
         naam:fase['Titel'], 
-        tijd:[$timeScale(new Date(fase['Datum start']+'-01')), $timeScale(new Date(fase['Datum eind']+'-30'))],
+        tijd:[$timeScale(new Date(fase['Datum start'])), $timeScale(new Date(fase['Datum eind']))],
         beschrijving: fase['Korte beschrijving']}
       )
     });
