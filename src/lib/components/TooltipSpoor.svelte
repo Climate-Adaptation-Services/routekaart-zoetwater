@@ -19,7 +19,15 @@
 
 </script>   
 
-<div class='tooltip-spoor' style='left:{(bboxSpoorCircle.left > w*0.6) ? bboxSpoorCircle.left - 500 : bboxSpoorCircle.left + 50}px; top:{(bboxProduct) ? bboxProduct.top+30 : bboxSpoorCircle.top-350}px; border:5px solid {(spoor === 'bpz') ? '#EA7722' : '#6FAD33'}'>
+<div class='tooltip-spoor' style='
+  left:{(bboxSpoorCircle.left > w*0.6) 
+      ? bboxSpoorCircle.left - 450 
+      : bboxSpoorCircle.left}px;
+  {(bboxProduct) 
+    ? `top: ${bboxProduct.top+40}px;` 
+    : `bottom: ${h - bboxSpoorCircle.top -20}px;`}
+  border:5px solid {(spoor === 'bpz') ? '#EA7722' : '#6FAD33'}'>
+  
   <h4>{$spoorSelection['Volledige titel']}</h4>
   <p style='font-size:14px'>{$spoorSelection['Korte beschrijving']}</p>
   <p style='font-size:12px; width:50%; float:left'><em>{($spoorSelection['Type']) ? $spoorSelection['Type'] : ''}</em></p>
