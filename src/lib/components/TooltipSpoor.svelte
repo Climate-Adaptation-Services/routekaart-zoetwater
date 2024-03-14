@@ -8,7 +8,7 @@
   
   $: bboxSpoorCircle = document.getElementsByClassName(`circle-${$spoorSelection['Korte titel'].replaceAll(' ','')}`)[0].getBoundingClientRect()
   
-  $: productID = $spoorSelection['prodID'].split(',')[0]
+  $: productID = ($spoorSelection['prodID']) ? $spoorSelection['prodID'].split(',')[0] : ''
   $: bboxProduct = (productID)
     ? document.getElementsByClassName('product-g-' + productID)[0].getBoundingClientRect()
     : null
