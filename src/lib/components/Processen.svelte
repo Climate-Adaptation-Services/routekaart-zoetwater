@@ -86,7 +86,12 @@
           <text 
             class='proces-titel'
             x={$timeScale(new Date(proces['Datum start'])) + ($timeScale(new Date(proces['Datum eind'])) - $timeScale(new Date(proces['Datum start'])) - 2)/2}
-            dx={(proces['Korte titel'] === 'Ontwikkelpadenkaarten') ? 110 : 0}
+            dx={(proces['Korte titel'] === 'Ontwikkelpadenkaarten') 
+              ? 110 
+              : (proces['Korte titel'] === 'Beschrijving mogelijke maatregelen') 
+                ? -40
+                : 0
+            }
             y='1.1em'
             font-size={h*0.02}
             text-anchor='middle'
