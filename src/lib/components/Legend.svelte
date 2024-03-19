@@ -36,9 +36,16 @@
           <text>{type}</text>
         </g>
       {/each}
-      <g transform='translate(-70,283)'>
-        <rect fill='white' stroke='grey' stroke-width='2' width={22} height={22} transform='rotate(45)' style='-webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .3))'/>
-        <text x={45} y={20}>Product</text>
+      <g transform='translate(0,283)'>
+        <g transform='translate(-100,0)'>
+          <rect fill='white' stroke='grey' stroke-width='2' width={22} height={22} transform='rotate(45)' style='-webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .3))'/>
+          <text x={25} y={21}>Product</text>
+        </g>
+        <g transform='translate(20,0)'>
+          <rect fill='white' stroke='grey' stroke-width='2' width={22} height={22} transform='rotate(45)' style='-webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .3))'/>
+          <text x={25} y={21}>Afgerond</text>
+          <image xlink:href='/images/check.png' width={30} x={-12} y='-5'/>
+        </g>
       </g>
     </g>
   </g>
