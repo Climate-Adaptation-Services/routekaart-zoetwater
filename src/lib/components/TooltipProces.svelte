@@ -192,7 +192,7 @@
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     padding:5px 15px 10px 15px;
-    max-width: 420px;
+    max-width: 520px;
     text-align: center;
     color: #635F5D;
     pointer-events:auto;
