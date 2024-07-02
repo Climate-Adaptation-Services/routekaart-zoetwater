@@ -21,9 +21,9 @@ Kennis en ervaring opdoen met het opstellen en gebruiken van ontwikkelpadenkaart
 In 2012 is door Stratelligence de Handreiking Adaptief Deltamanagement opgesteld als leidraad voor Deltaprogramma’s bij de ontwikkeling van strategieën en het opstellen van ontwikkelpadenkaarten. Op basis van deze handreiking heeft Stratelligence in 2022 voor specifiek het DPZW een verkorte leidraad geschreven. In de verkorte leidraad staat een voorstel voor een stappenplan om te komen tot een ontwikkelpadenkaart en voorkeursstrategie per zoetwaterregio. In deze oefening doorloopt het programmateam een deel van dit stappenplan om de voorgestelde methodiek te verbeteren.
 `,
 
-'Beoordelingscriteria':
+'Vergelijkingsinstrument DPZW':
 `
-<h2>Beoordelingscriteria (BC)</h2>
+<h2>Vergelijkingsinstrument DPZW:</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
 Transparantie over de criteria op basis waarvan de individuele zoetwatermaatregelen middels een multicriteria-analyse (MCA) worden gerangschikt (stap 7), en op basis waarvan ontwikkelpaden en maatregelpakketten voor DPZW fase 3 middels een vergelijkingssystematiek (VGS) worden vergeleken (stappen 9 en 11).
 
