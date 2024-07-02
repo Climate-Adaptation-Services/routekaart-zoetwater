@@ -177,9 +177,9 @@ Deze maatregelpakketten omvatten een KZH-, DPIJ- en IRM-variant en zoetwatermaat
 `,
 
 
-'Ontwikkelpadenkaarten':
+'Ontwikkelpadenkaarten en hoekpunten zoetwaterstrategie':
 `
-<h2>Ontwikkelpadenkaarten (OPK)</h2>
+<h2>Ontwikkelpadenkaarten en hoekpunten zoetwaterstrategie (OPK)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
 <p>Het gebruik van ontwikkelpadenkaarten zorgt ervoor dat adaptief deltamanagement een prominente rol speelt in de voorbereiding op DPZW fase 3. Met ontwikkelpadenkaarten wordt bij het maken van afwegingen over investeringen op de korte termijn steeds geredeneerd vanuit wat nodig is om Nederland op de middellange- en langetermijn weerbaar te laten zijn tegen zoetwatertekorten.</p>
 De ontwikkelpadenkaarten bieden inzicht in de manier(en) waarop het DPZW-hoofddoel gehaald kan worden: met welke strategie, tegen welke kosten, en met welke (sociaal-)maatschappelijke effecten en ruimtelijke consequenties. <p style='text-decoration:underline'>Daarmee vormen ze belangrijke input voor een mogelijke herijking van de voorkeursstrategie voor zoetwater en de DPZW-doelen in de Deltabeslissing Zoetwater.</p>
