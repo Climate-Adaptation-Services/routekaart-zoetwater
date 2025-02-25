@@ -76,6 +76,8 @@
   $: imageWidth = 27
   $: subTitleFontSize = 14
 
+  console.log('proces', proces)
+
 </script>
 
 <div class='tooltip-proces' 
@@ -88,7 +90,7 @@
     <p class='kortbeschrijving' style='font-size:{subTitleFontSize-2}px'>
       {@html proces['Korte beschrijving']}
     </p>
-    <button style='cursor:pointer; margin-bottom:10px; pointer-events:auto' on:click={() => showModal(proces['Volledige titel'])}>Meer info</button>
+    <button style='cursor:pointer; margin-bottom:10px; pointer-events:auto' on:click={() => showModal(proces.procID)}>Meer info</button>
     <hr>
     <div class='proces-extra-info'>
       <img class='extra-info-imgs' src="/images/schedule.png" style='width:{imageWidth}px'/>

@@ -10,7 +10,6 @@
 
   const proces = data.proces.filter(d => d['procID'] === product['procID'])[0]
 
-  console.log(product)
   const checkOrCross = (product["Volledige omschrijving"] === "Landelijke knelpuntenanalyse")
     ? 'close'
     : 'check'

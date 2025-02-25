@@ -1,5 +1,5 @@
 <script>
-  export let message = 'Not found';
+  export let message = 'Geen lange omschrijving beschikbaar';
 </script>
 
 <div>{@html message}</div>

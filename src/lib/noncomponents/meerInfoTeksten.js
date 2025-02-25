@@ -1,6 +1,6 @@
 export const meerInfoTeksten = {
 
-  'Leidraad factsheets':
+  'proc02':
 `
 <h2>Leidraad factsheets (LD)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
@@ -11,7 +11,7 @@ Het programmateam update de vorige fase gebruikte factsheets en voorziet deze va
 `,
 
 
-'Oefening ontwikkelpadenkaarten':
+'proc04':
 `
 <h2>Oefening ontwikkelpadenkaarten (OPK-oefening)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
@@ -21,7 +21,7 @@ Kennis en ervaring opdoen met het opstellen en gebruiken van ontwikkelpadenkaart
 In 2012 is door Stratelligence de Handreiking Adaptief Deltamanagement opgesteld als leidraad voor Deltaprogramma’s bij de ontwikkeling van strategieën en het opstellen van ontwikkelpadenkaarten. Op basis van deze handreiking heeft Stratelligence in 2022 voor specifiek het DPZW een verkorte leidraad geschreven. In de verkorte leidraad staat een voorstel voor een stappenplan om te komen tot een ontwikkelpadenkaart en voorkeursstrategie per zoetwaterregio. In deze oefening doorloopt het programmateam een deel van dit stappenplan om de voorgestelde methodiek te verbeteren.
 `,
 
-'Vergelijkingsinstrument DPZW':
+'proc03':
 `
 <h2>Vergelijkingsinstrument DPZW:</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
@@ -37,7 +37,7 @@ Het programmateam legt dit voorstel ter besluitvorming voor aan het Bestuurlijk 
 `,
 
 
-'Landelijke knelpuntenanalyse':
+'proc05':
 `
 <h2>Landelijke knelpuntenanalyse (KPA)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
@@ -73,7 +73,7 @@ De resultaten van de KPA worden middels een regioronde gepresenteerd in de vorm 
 `,
 
 
-'Sociaaleconomische analyse (nulalternatief)':
+'proc06':
 `
 <h2>Sociaaleconomische analyse-nulalternatief (SEA0)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
@@ -84,7 +84,7 @@ Het programmateam voert een sociaaleconomische analyse uit van de referentiesitu
 `,
 
 
-'Beschrijving van mogelijke maatregelen':
+'proc07':
 `
 <h2>Beschrijving van mogelijke maatregelen (FS1)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
@@ -95,7 +95,7 @@ De zoetwaterregio’s en RWS inventariseren mogelijke maatregelen en dragen deze
 `,
 
 
-'Peer review lijst van mogelijke maatregelen':
+'proc08':
 `
 <h2>Peer review lijst van mogelijke maatregelen</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
@@ -106,7 +106,7 @@ Het programmateam, de zoetwaterregio’s en RWS nemen in een landelijke bijeenko
 `,
 
 
-'Schatting kosten en effecten van mogelijke maatregelen':
+'proc09':
 `
 <h2>Schatting kosten en effecten van mogelijke maatregelen (FS2)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
@@ -123,40 +123,40 @@ De zoetwaterregio’s en RWS kunnen de gevraagde informatie op verschillende man
 `,
 
 
-'Validatie kosten en effecten van mogelijke maatregelen':
-`
-<h2>Validatie kosten en effecten van mogelijke maatregelen (FS3)</h2>
-<h3 style='color:rgb(39, 77, 141)'>Doel</h3>
-Een validatie van de door de zoetwaterregio’s en RWS geschatte kosten en effecten (stap 5) door het programmateam zorgt voor een consistente beoordeling van individuele maatregelen (stap 7). In deze stap worden ook eventuele bovenregionale effecten en effecten van combinaties van maatregelen inzichtelijk gemaakt.
+// 'proc11':
+// `
+// <h2>Validatie kosten en effecten van mogelijke maatregelen (FS3)</h2>
+// <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
+// Een validatie van de door de zoetwaterregio’s en RWS geschatte kosten en effecten (stap 5) door het programmateam zorgt voor een consistente beoordeling van individuele maatregelen (stap 7). In deze stap worden ook eventuele bovenregionale effecten en effecten van combinaties van maatregelen inzichtelijk gemaakt.
 
-<h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
-Deze stap omvat:
-<ul>
-  <li>Een validatie van de geschatte kosten;</li>
-  <li>Een validatie van de geschatte hydrologische effecten , inclusief het bepalen van eventuele bovenregionale en cumulatieve effecten;</li>
-  <li>Monetarisering/kwantificering van de effecten op zoetwater gebruiksfuncties (incl. keteneffecten) alsmede een validatie van de niet te monetariseren/kwantificeren effecten;</li>
-  <li>Een validatie van de aangedragen scores op de overige beoordelingscriteria (D t/m G).</li>
-</ul>
-<p>Het programmateam rekent zoveel mogelijk aangedragen maatregelen (stap 3 en 4) door met het landelijk hydrologisch Quick Scan Instrumentarium. Op basis van doorrekeningen van langjarige reeksen wordt per maatregel per deltascenario het doelbereik bepaald. Dit maakt een eerlijke vergelijking van de maatregelen mogelijk en legt tegelijkertijd eventuele bovenregionale effecten bloot.</p> 
-<p>Ook rekent het programmateam combinaties van maatregelen door om eventuele (onvoorziene) interferenties vroegtijdig bloot te leggen. Het cumulatieve hydrologisch effect van een combinatie van maatregelen kan immers afwijken van de som van de hydrologische effecten van de afzonderlijke maatregelen. Zo kunnen op zichzelf minder ‘gunstige’ maatregelen in combinatie juist gunstig uitpakken doordat ze elkaar versterken, en kunnen op zichzelf meer ‘gunstige’ maatregelen elkaar juist tegenwerken.</p>
-<p>De voorgaande berekeningen zullen noodgedwongen plaatsvinden op basis van de aangeleverde beschrijvingen van de mogelijke maatregelen (stap 3). Dit maakt het mogelijk om deze berekeningen parallel aan stap 5 uit te voeren, waarmee kostbare tijd wordt gewonnen. De validatie betreft dan het beoordelen van de verschillen tussen de uitkomsten van de berekeningen met het Quick Scan Instrumentarium en de door de regio’s aangeleverde schattingen.</p>
-<p>De effecten van de mogelijke maatregelen op zoetwater gebruiksfuncties worden zo veel mogelijk gemonetariseerd/gekwantificeerd. Hiertoe wordt gebruik gemaakt van benchmarks afgeleid van de effectbepaling van het nulalternatief (stap 2).</p>
-<p>Het programmateam deelt de gevalideerde kosten en effecten middels factsheet 3 (FS3) met de zoetwaterregio’s en RWS. Daarmee biedt factsheet 3 transparantie over de informatie die bij de beoordeling van individuele maatregelen (stap 7) en het opstellen van ontwikkelpadenkaarten (stap 9) gebruikt wordt.</p>
-`,
-
-
-'Sociaaleconomische analyse (individuele maatregelen)':
-`
-<h2>Sociaaleconomische analyse van individuele maatregelen (SEA1)</h2>
-<h3 style='color:rgb(39, 77, 141)'>Doel</h3>
-De SEA van individuele maatregelen biedt inzicht in het maatschappelijk effect van alle aangedragen mogelijke maatregelen (stap 3 en 4).
-
-<h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
-De sociaaleconomische analyse van individuele maatregelen omvat in aanloop naar DPZW fase 3 een kosteneffectiviteitsanalyse (KEA), een maatschappelijke kosten-baten analyse (MKBA) en een multicriteria-analyse (MCA) . Op basis van de informatie in factsheet 3 (stap 6) zet het programmateam per maatregel de kosten af tegen het doelbereik (kosteneffectiviteit) en tegen de effecten op zoetwater gebruiksfuncties en keteneffecten (kosten-baten saldo). Ook wordt op basis van deze informatie per maatregel een MCA-totaalscore bepaald. Daarbij wordt gescoord op alle eerder vastgestelde beoordelingscriteria (incl. toepassing van wegingsfactoren) met uitzondering van het doelbereik, de kosten en de effecten op zoetwater gebruiksfuncties.
-`,
+// <h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
+// Deze stap omvat:
+// <ul>
+//   <li>Een validatie van de geschatte kosten;</li>
+//   <li>Een validatie van de geschatte hydrologische effecten , inclusief het bepalen van eventuele bovenregionale en cumulatieve effecten;</li>
+//   <li>Monetarisering/kwantificering van de effecten op zoetwater gebruiksfuncties (incl. keteneffecten) alsmede een validatie van de niet te monetariseren/kwantificeren effecten;</li>
+//   <li>Een validatie van de aangedragen scores op de overige beoordelingscriteria (D t/m G).</li>
+// </ul>
+// <p>Het programmateam rekent zoveel mogelijk aangedragen maatregelen (stap 3 en 4) door met het landelijk hydrologisch Quick Scan Instrumentarium. Op basis van doorrekeningen van langjarige reeksen wordt per maatregel per deltascenario het doelbereik bepaald. Dit maakt een eerlijke vergelijking van de maatregelen mogelijk en legt tegelijkertijd eventuele bovenregionale effecten bloot.</p> 
+// <p>Ook rekent het programmateam combinaties van maatregelen door om eventuele (onvoorziene) interferenties vroegtijdig bloot te leggen. Het cumulatieve hydrologisch effect van een combinatie van maatregelen kan immers afwijken van de som van de hydrologische effecten van de afzonderlijke maatregelen. Zo kunnen op zichzelf minder ‘gunstige’ maatregelen in combinatie juist gunstig uitpakken doordat ze elkaar versterken, en kunnen op zichzelf meer ‘gunstige’ maatregelen elkaar juist tegenwerken.</p>
+// <p>De voorgaande berekeningen zullen noodgedwongen plaatsvinden op basis van de aangeleverde beschrijvingen van de mogelijke maatregelen (stap 3). Dit maakt het mogelijk om deze berekeningen parallel aan stap 5 uit te voeren, waarmee kostbare tijd wordt gewonnen. De validatie betreft dan het beoordelen van de verschillen tussen de uitkomsten van de berekeningen met het Quick Scan Instrumentarium en de door de regio’s aangeleverde schattingen.</p>
+// <p>De effecten van de mogelijke maatregelen op zoetwater gebruiksfuncties worden zo veel mogelijk gemonetariseerd/gekwantificeerd. Hiertoe wordt gebruik gemaakt van benchmarks afgeleid van de effectbepaling van het nulalternatief (stap 2).</p>
+// <p>Het programmateam deelt de gevalideerde kosten en effecten middels factsheet 3 (FS3) met de zoetwaterregio’s en RWS. Daarmee biedt factsheet 3 transparantie over de informatie die bij de beoordeling van individuele maatregelen (stap 7) en het opstellen van ontwikkelpadenkaarten (stap 9) gebruikt wordt.</p>
+// `,
 
 
-'Beleidsalternatieven':
+// 'proc11':
+// `
+// <h2>Sociaaleconomische analyse van individuele maatregelen (SEA1)</h2>
+// <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
+// De SEA van individuele maatregelen biedt inzicht in het maatschappelijk effect van alle aangedragen mogelijke maatregelen (stap 3 en 4).
+
+// <h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
+// De sociaaleconomische analyse van individuele maatregelen omvat in aanloop naar DPZW fase 3 een kosteneffectiviteitsanalyse (KEA), een maatschappelijke kosten-baten analyse (MKBA) en een multicriteria-analyse (MCA) . Op basis van de informatie in factsheet 3 (stap 6) zet het programmateam per maatregel de kosten af tegen het doelbereik (kosteneffectiviteit) en tegen de effecten op zoetwater gebruiksfuncties en keteneffecten (kosten-baten saldo). Ook wordt op basis van deze informatie per maatregel een MCA-totaalscore bepaald. Daarbij wordt gescoord op alle eerder vastgestelde beoordelingscriteria (incl. toepassing van wegingsfactoren) met uitzondering van het doelbereik, de kosten en de effecten op zoetwater gebruiksfuncties.
+// `,
+
+
+'proc12':
 `
 <h2>Beleidsalternatieven (BA)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
@@ -177,7 +177,7 @@ Deze maatregelpakketten omvatten een KZH-, DPIJ- en IRM-variant en zoetwatermaat
 `,
 
 
-'Ontwikkelpadenkaarten en hoekpunten zoetwaterstrategie':
+'proc13':
 `
 <h2>Ontwikkelpadenkaarten en hoekpunten zoetwaterstrategie (OPK)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
@@ -199,7 +199,7 @@ De ontwikkelpadenkaarten bieden inzicht in de manier(en) waarop het DPZW-hoofddo
 `,
 
 
-'Maatregelen trechteren naar voorkeurspakket met ontwikkelpadenkaart':
+'proc14':
 `
 <h2>Voorkeurspakket met ontwikkelpadenkaart (VP)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
@@ -209,7 +209,7 @@ Het voorkeursmaatregelpakket voor DPZW fase 3 bevat alle zoetwatermaatregelen wa
 Alle zoetwaterregio’s en Rijkswaterstaat stellen een voorkeursmaatregelpakket voor DPZW fase 3 en een bijbehorende ontwikkelpadenkaart samen. Indien een of meerdere korte termijn maatregelen uit het voorkeurspakket niet in de samengestelde beleidsalternatieven (stap 8) zitten, dan is voor deze maatregelen extra onderbouwing nodig.
 `,
 
-'Sociaaleconomische analyse (maatregelpakketten)':
+'proc15':
 `
 <h2>Sociaaleconomische analyse van maatregelpakketten (SEA2)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
