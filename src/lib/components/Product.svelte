@@ -10,6 +10,15 @@
 
   const proces = data.proces.filter(d => d['procID'] === product['procID'])[0]
 
+  console.log(product)
+  const checkOrCross = (product["Volledige omschrijving"] === "Landelijke knelpuntenanalyse")
+    ? 'close'
+    : 'check'
+
+  const checkOrCrossY = (product["Volledige omschrijving"] === "Landelijke knelpuntenanalyse")
+    ? -3
+    : -7
+
 </script>
 
 
@@ -27,7 +36,7 @@
     style='-webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .3));'
   />
   {#if product['Weblink']}
-    <image xlink:href='/images/check.png' width={procesHeight+5} x={-procesHeight*0.48} y='-7'/>
+    <image xlink:href='/images/{checkOrCross}.png' width={procesHeight+5} x={-procesHeight*0.48} y={checkOrCrossY}/>
   {/if}
   {#each data.pijlen.filter(d => d['prodID'] === product['prodID']) as pijl}
     <GroenePijl {pijl} {procesHeight} {bandStep} {data}/>
