@@ -1,13 +1,16 @@
 export const meerInfoTeksten = {
 
-  'proc02':
-`
-<h2>Leidraad factsheets (LD)</h2>
-<h3 style='color:rgb(39, 77, 141)'>Doel</h3>
-De leidraad ondersteunt de zoetwaterregio’s en Rijkswaterstaat (RWS) bij het invullen van de factsheets (stap 3 en 5). Tevens zorgt het volgen van de leidraad voor meer consistentie in de aangedragen informatie over de mogelijke maatregelen.
-
+  'proc02': `
+<ul>
+  <li><h2>Leidraad factsheets (LD)</h2></li>
+  <li><h3 style='color:rgb(39, 77, 141)'>Doel</h3></li>
+  <li>Zoetwaterregio’s en Rijkswaterstaat (RWS) dragen informatie over mogelijke maatregelen aan middels factsheets (stappen 3 en 5). De leidraad ondersteunt bij het invullen van de factsheets. Het volgen van de leidraad zorgt voor meer consistentie in de aangedragen informatie over de mogelijke maatregelen.</li>
+  <li><h3 style='color:rgb(39,
 <h3 style='color:rgb(39, 77, 141)'>Aanpak</h3>
 Het programmateam update de vorige fase gebruikte factsheets en voorziet deze van een leidraad. De concept leidraad en factsheets worden door de zoetwaterregio’s en RWS op eenduidigheid en toepasbaarheid getoetst.  
+
+<h3 style='color:rgb(39, 77, 141)'>Product</h3>
+Definitieve factsheets incl. leidraad komen in augustus 2024 beschikbaar.
 `,
 
 
@@ -19,13 +22,15 @@ Kennis en ervaring opdoen met het opstellen en gebruiken van ontwikkelpadenkaart
 
 <h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
 In 2012 is door Stratelligence de Handreiking Adaptief Deltamanagement opgesteld als leidraad voor Deltaprogramma’s bij de ontwikkeling van strategieën en het opstellen van ontwikkelpadenkaarten. Op basis van deze handreiking heeft Stratelligence in 2022 voor specifiek het DPZW een verkorte leidraad geschreven. In de verkorte leidraad staat een voorstel voor een stappenplan om te komen tot een ontwikkelpadenkaart en voorkeursstrategie per zoetwaterregio. In deze oefening doorloopt het programmateam een deel van dit stappenplan om de voorgestelde methodiek te verbeteren.
+<h3 style='color:rgb(39, 77, 141)'>Product</h3> 
+Rapport eind 2023 opgeleverd.
 `,
 
 'proc03':
 `
 <h2>Vergelijkingsinstrument DPZW:</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
-Transparantie over de criteria op basis waarvan de individuele zoetwatermaatregelen middels een multicriteria-analyse (MCA) worden gerangschikt (stap 7), en op basis waarvan ontwikkelpaden en maatregelpakketten voor DPZW fase 3 middels een vergelijkingssystematiek (VGS) worden vergeleken (stappen 9 en 11).
+Een instrument dat geordende inzichten levert over het doelbereik en de effecten van verschillende zoetwaterstrategieën en maatregelpakketten. Het instrument zal toegepast worden bij het vergelijken van ontwikkelpaden (stap 9) en maatregelpakketten voor DPZW fase 3 (stap 11). Daarmee ondersteunt het instrument bij bestuurlijke afwegingen in aanloop naar de 2de herijking van de Deltabeslissing Zoetwater en het Deltaplan Zoetwater 2028-2033.
 
 <h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
 Het programmateam doet een voorstel voor criteria op basis van een inventarisatie van eerder uitgevoerde analyses om beleidsalternatieven te vergelijken of te rangschikken (o.a. de in de vorige fase toegepaste Vergelijkingssystematiek 3.0), een omgevingsanalyse en gesprekken met betrokkenen. Belangrijke uitgangspunten zijn:
@@ -34,6 +39,9 @@ Het programmateam doet een voorstel voor criteria op basis van een inventarisati
   <li>De set aan criteria moet consistent zijn met het vernieuwde herijkingsinstrument (Vergelijkingssystematiek 4.0).</li>
 </ul>
 Het programmateam legt dit voorstel ter besluitvorming voor aan het Bestuurlijk Platform Zoetwater (BPZ).
+
+<h3 style='color:rgb(39, 77, 141)'>Product</h3> 
+Bespreekmemo BPZ 5 juni 2024 – Concept Vergelijkingsinstrument DPZW
 `,
 
 
@@ -70,6 +78,14 @@ Het programmateam voert een KPA uit die uit drie onderdelen bestaat:
 <img src='/images/Picture1.png' style='width:100%; margin:20px 0px 20px 0px'/>
 
 De resultaten van de KPA worden middels een regioronde gepresenteerd in de vorm van een landelijk beeld aangevuld met een toespitsing op alle 6 zoetwaterregio’s en het Hoofdwatersysteem (HWS). Indien gewenst kunnen regio’s in aanvulling op de KPA een regionale knelpuntenanalyse uitvoeren.
+
+<h3 style='color:rgb(39, 77, 141)'>Product <strong style='text-decoration:underline'>bij toelichting</strong></h3> 
+3 memo’s:
+<ol start='0'>
+  <li>Memo indicatoren KPA – HydroLogic</li>
+  <li>Productoverzicht visualisaties KPA – FABRICations</li>
+  <li>Uitsplitsing naar zoetwater gebruiksfuncties – Rijkswaterstaat WVL</li>
+</ol>
 `,
 
 
@@ -80,7 +96,7 @@ De resultaten van de KPA worden middels een regioronde gepresenteerd in de vorm 
 De sociaaleconomische analyse (SEA) van het nulalternatief biedt inzicht in het maatschappelijk effect van een veranderende zoetwaterbeschikbaarheid onder verschillende deltascenario’s bij ongewijzigd zoetwaterbeleid (na uitvoering van de Deltaprogramma Zoetwater fase 2 maatregelen). Een berekening van het nulalternatief is noodzakelijk om te kunnen bepalen of het uitvoeren van het voorkeurspakket een positief effect heeft op de Nederlandse welvaart ten opzichte van niets (aanvullends) doen.
 
 <h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
-Het programmateam voert een sociaaleconomische analyse uit van de referentiesituatie alsmede de verschillende deltascenario’s bij ongewijzigd zoetwaterbeleid. Daartoe worden de hydrologische knelpunten (stap 1) met behulp van verschillende effectmodules door vertaald naar het effect op zoetwater gebruiksfuncties, waarna de uitkomsten van de verschillende effectmodules worden gecombineerd en geduid.
+Het programmateam voert een sociaaleconomische analyse uit van de referentiesituatie alsmede de verschillende deltascenario’s bij ongewijzigd zoetwaterbeleid. Daartoe worden de hydrologische knelpunten (stap 1) met behulp van effectmodules en expert judgement door vertaald naar het effect op zoetwater gebruiksfuncties.
 `,
 
 
@@ -88,10 +104,16 @@ Het programmateam voert een sociaaleconomische analyse uit van de referentiesitu
 `
 <h2>Beschrijving van mogelijke maatregelen (FS1)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
-Een overzicht over en beschrijving van alle aangedragen mogelijke maatregelen (incl. KZH-, DPIJ- en IRM-varianten en varianten voor het afsluiten/verondiepen van de Nieuwe Waterweg) verkrijgen. De resulterende lijst met zoetwatermaatregelen dient als uitgangspunt voor alle opvolgende stappen. 
+Een overzicht en beschrijving van alle mogelijke zoetwatermaatregelen. De lijst met mogelijke maatregelen moet dermate uitgebreid zijn dat daarmee naar verwachting onder alle deltascenario’s (zichtjaren 2050 en 2100) het DPZW-werkdoel gehaald wordt en omvat daarmee potentieel:
 
+<ul>
+<li>Korte (2028-2039), middellange (2050) en lange (2100 en later) termijn maatregelen;</li>
+<li>Lokale en regionale maatregelen alsmede grotere maatregelen in o.a. het HWS;</li>
+<li>Zoetwatermaatregelen waarvoor het DPZW aan zet is én zoetwatermaatregelen waarvoor het DPZW niet aan zet is (bijv. maatregelen t.b.v. een verandering van de afvoerverdeling bij laagwater via het Programma Integraal Riviermanagement); </li>
+<li>Maatregelen uit alle 5 categorieën van de Nationale Omgevingsvisie (NOVI), nl. rekening houden met waterbeschikbaarheid bij de ruimtelijke inrichting en het landgebruik; zuiniger omgaan met water; water beter vasthouden, bergen en opslaan in de bodem en in buffers; water slim verdelen; en (rest)schade accepteren.</li>
+</ul>
 <h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
-De zoetwaterregio’s en RWS inventariseren mogelijke maatregelen en dragen deze aan door met behulp van de leidraad (stap 0) voor elke maatregel factsheet 1 (FS1) in te vullen. Het betreft mogelijke maatregelen voor de korte termijn (DPZW fase 3, 2028-2033), middellange termijn (2050), en lange termijn (2100). Het resultaat is een lijst met maatregelen waarmee naar verwachting onder alle scenario’s het DPZW-hoofddoel gehaald wordt.
+De zoetwaterregio’s en RWS inventariseren mogelijke zoetwatermaatregelen en dragen deze aan via de samenwerkruimte door, met ondersteuning van de opgestelde leidraad, factsheet 0 (FS0) in te vullen. Ten behoeve van de peer review (stap 4) worden de zoetwaterregio’s en RWS gevraagd om FS0 tussentijds in concept in te vullen (FS0-concept). Voor korte termijn uitvoeringsmaatregelen wordt van de zoetwaterregio’s en RWS aanvullende informatie gevraagd middels factsheet 1 (FS1).
 `,
 
 
@@ -102,7 +124,7 @@ De zoetwaterregio’s en RWS inventariseren mogelijke maatregelen en dragen deze
 De lijst met mogelijke maatregelen verrijken door gebruik te maken van elkaars kennis en ervaring.
 
 <h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
-Het programmateam, de zoetwaterregio’s en RWS nemen in een landelijke bijeenkomst als kritische vrienden de verschillende lijsten met mogelijke maatregelen door. Deze bijeenkomst kan resulteren in alternatieve en/of aanvullende maatregelen. Ook voor deze maatregelen dient factsheet 1 (FS1) ingevuld te worden.
+Tijdens een bijeenkomst nemen de kernteamleden de lijsten met mogelijke maatregelen (FS0-concept) als kritische vrienden door. Deze bijeenkomst kan resulteren in alternatieve en/of aanvullende maatregelen. Factsheet 0 dient aangevuld te worden met deze maatregelen.
 `,
 
 
@@ -110,18 +132,61 @@ Het programmateam, de zoetwaterregio’s en RWS nemen in een landelijke bijeenko
 `
 <h2>Schatting kosten en effecten van mogelijke maatregelen (FS2)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
-Een schatting van de kosten en effecten van alle mogelijke maatregelen door de zoetwaterregio’s en RWS. De regio’s beschikken doorgaans over meer gedetailleerde kennis en modellen van het regionale (water)systeem en de aangedragen maatregelen. In de vorm van factsheet 2 (FS2) wordt deze kennis door het programmateam meegenomen in de beoordeling van individuele maatregelen (stap 7).
+Basisscore op de criteria uit het Vergelijkingsinstrument DPZW voor alle korte termijn (2028-2039) uitvoeringsmaatregelen. 
 
 <h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
-De zoetwaterregio’s en RWS dragen zorg voor het invullen van factsheet 2 (FS2) voor alle aangedragen maatregelen (stap 3 en 4). In deze factsheet wordt gevraagd om:
+In de verdere stappen van de routekaart wordt onderscheid gemaakt tussen de volgende type maatregelen:
+<ol type='a'>
+  <li>Onderzoeken, pilots, uitvoeringsmaatregelen en overige maatregelen;</li>
+  <li>Korte (2028-2039), middellange (2050) en lange (2100 en later) termijn maatregelen;</li>
+  <li>Lokale/regionale maatregelen en grotere maatregelen. Hierbij verstaan we onder grotere maatregelen, maatregelen die adequaat met het landelijk modelinstrumentarium kunnen worden doorgerekend.</li>
+</ol>	
+<br>
+
+Ten behoeve van o.a. de latere sociaaleconomische analyse (stappen 7 en 11) dienen alle middels FS0 aangedragen korte termijn uitvoeringsmaatregelen te worden gescoord op de criteria uit het Vergelijkingsinstrument DPZW. De basis hiervoor wordt gelegd door het invullen van factsheet 2 (FS2) op de samenwerkruimte. In stap 6 wordt de informatie in factsheet 2 gevalideerd en verrijkt. 
+
+Middels factsheet 2 wordt voor de korte termijn uitvoeringsmaatregelen gevraagd om:
 <ul>
-  <li>Een kwantitatieve schatting van de kosten en hydrologische effecten (m3, cm grondwaterstandstijging, etc.);</li>
-  <li>Een kwalitatieve schatting van de effecten op zoetwater gebruiksfuncties;</li>
-  <li>Een score op de overige beoordelingscriteria (stap 0).</li>
+<li>Een kwantitatieve schatting van de hydrologische effecten (m3, cm grondwaterstandstijging, etc.) en de kosten;</li>
+<li>Een kwalitatieve score op de overige criteria uit het Vergelijkingsinstrument DPZW.</li>
 </ul>
-De zoetwaterregio’s en RWS kunnen de gevraagde informatie op verschillende manieren (laten) genereren: 1) zelf analyses uitvoeren, 2) een adviesbureau inhuren, of 3) het programmateam vragen.
+
+De <u>zoetwaterregio’s</u> beschikken doorgaans over meer gedetailleerde kennis en modellen van het lokale/regionale (water)systeem en de aangedragen lokale/regionale maatregelen. Zij dragen daarom zorg voor het invullen van FS2 voor alle middels FS0 aangedragen lokale/regionale korte termijn uitvoeringsmaatregelen. Het <u>programmateam</u> draagt zorg voor het invullen van FS2 voor alle middels FS0 aangedragen grotere korte termijn uitvoeringsmaatregelen.
+Aanvullend wordt de <u>zoetwaterregio’s en RWS</u> gevraagd middels FS2 de kosten van alle middels FS0 aangedragen onderzoeken, pilots en overige maatregelen aan te dragen.
 `,
 
+'proc10':
+`
+<h2>Definitieve score op criteria uit Vergelijkingsinstrument DPZW voor korte termijn uitvoeringsmaatregelen (FS3)</h2>
+<h3 style='color:rgb(39, 77, 141)'>Doel</h3>
+Definitieve score op de criteria uit het Vergelijkingsinstrument DPZW voor alle korte termijn (2028-2039) uitvoeringsmaatregelen. Middels factsheet 3 (FS3) wordt inzicht geboden in welke scores meegenomen worden in de volgende stappen.
+
+<h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
+In deze stap wordt de informatie in factsheet 2 (FS2) gevalideerd (t.b.v. een eerlijke vergelijking van individuele maatregelen) en verrijkt. De beoogde aanpak verschilt per type korte termijn uitvoeringsmaatregel:
+<ul>
+  <li>Lokale/regionale korte termijn uitvoeringsmaatregelen</li>
+    <ul>
+      <li>Orde grootte validatie van de aangedragen schattingen van de hydrologische effecten en de kosten;</li>
+      <li>Monetarisering/kwantificering van de effecten op een aantal zoetwater gebruiksfuncties;</li>
+      <li>Validatie van de aangedragen scores op de overige criteria uit het Vergelijkingsinstrument DPZW.</li>
+    </ul>
+    <br>
+  <li>Grotere korte termijn uitvoeringsmaatregelen</li>
+    <ul>
+      <li>Bepaling van bovenregionale en cumulatieve hydrologische effecten<sup>1</sup>;</li>
+      <li>Monetarisering/kwantificering van de effecten op een aantal zoetwater gebruiksfuncties;</li>
+      <li>Een verdere verrijking van de informatie in FS2 op basis van nieuwe, meer gedetailleerde informatie gegenereerd door bijv. het Programma Klimaatbestendige Zoetwatervoorziening Hoofdwatersysteem (KZH), het Programma Integraal Riviermanagement (IRM) en het Deltaprogramma IJsselmeergebied (DPIJ). Daarbij kan gedacht worden aan bijv. het effect van een ARK-route op de waterkwaliteit en de kosten van concrete maatregelen om een specifieke verandering van de afvoerverdeling bij laagwater te realiseren. </li>
+    </ul>
+  </li>
+</ul>
+
+<br>
+<strong>Hieronder een schematisch overzicht van de werkverdeling en invulling van stappen 3, 5 en 6.</strong>
+<img src='/images/proc10img.png' style='width:100%; margin:20px 0px 20px 0px'/>
+
+<hr style="height:1px;border:none;color:#333;background-color:#333;">
+<sup>1</sup> Het programmateam rekent combinaties van maatregelen door om eventuele (onvoorziene) interferenties vroegtijdig bloot te leggen. Het cumulatieve hydrologisch effect van een combinatie van maatregelen kan immers afwijken van de som van de hydrologische effecten van de afzonderlijke maatregelen. Zo kunnen op zichzelf minder ‘gunstige’ maatregelen in combinatie juist gunstig uitpakken doordat ze elkaar versterken, en kunnen op zichzelf meer ‘gunstige’ maatregelen elkaar juist tegenwerken.
+`,
 
 // 'proc11':
 // `
@@ -145,15 +210,21 @@ De zoetwaterregio’s en RWS kunnen de gevraagde informatie op verschillende man
 // `,
 
 
-// 'proc11':
-// `
-// <h2>Sociaaleconomische analyse van individuele maatregelen (SEA1)</h2>
-// <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
-// De SEA van individuele maatregelen biedt inzicht in het maatschappelijk effect van alle aangedragen mogelijke maatregelen (stap 3 en 4).
+'proc11':
+`
+<h2>Sociaaleconomische analyse van individuele maatregelen (SEA1)</h2>
+<h3 style='color:rgb(39, 77, 141)'>Doel</h3>
+De SEA van individuele maatregelen biedt inzicht in het maatschappelijk effect van alle middels FS0 aangedragen korte termijn uitvoeringsmaatregelen.
 
-// <h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
-// De sociaaleconomische analyse van individuele maatregelen omvat in aanloop naar DPZW fase 3 een kosteneffectiviteitsanalyse (KEA), een maatschappelijke kosten-baten analyse (MKBA) en een multicriteria-analyse (MCA) . Op basis van de informatie in factsheet 3 (stap 6) zet het programmateam per maatregel de kosten af tegen het doelbereik (kosteneffectiviteit) en tegen de effecten op zoetwater gebruiksfuncties en keteneffecten (kosten-baten saldo). Ook wordt op basis van deze informatie per maatregel een MCA-totaalscore bepaald. Daarbij wordt gescoord op alle eerder vastgestelde beoordelingscriteria (incl. toepassing van wegingsfactoren) met uitzondering van het doelbereik, de kosten en de effecten op zoetwater gebruiksfuncties.
-// `,
+<h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
+De sociaaleconomische analyse van individuele maatregelen omvat in aanloop naar DPZW fase 3 een kosteneffectiviteitsanalyse (KEA), een maatschappelijke kosten-baten analyse (MKBA) en een multicriteria-analyse (MCA)<sup>2</sup>. Op basis van de informatie in factsheet 3 (stap 6) zet het programmateam per maatregel de kosten af tegen het doelbereik (kosteneffectiviteit) en tegen de effecten op zoetwater gebruiksfuncties en keteneffecten (kosten-baten saldo). Ook wordt op basis van deze informatie per maatregel een MCA-totaalscore bepaald. Daarbij wordt gescoord op alle eerder vastgestelde beoordelingscriteria (incl. toepassing van wegingsfactoren) met uitzondering van het doelbereik, en de kosten.
+
+<br><br>
+<hr style="height:1px;border:none;color:#333;background-color:#333;">  
+<sup>2</sup> Een MCA is een systematische aanpak om mogelijke beleidsoplossingen voor een bepaald probleem te rangschikken op basis van vooraf vastgestelde criteria, wegingsfactoren en scoreschaal. Daarbij biedt een MCA de mogelijkheid om scores op verschillende type criteria (bijv. economische, ecologische en sociale criteria, maar ook de drie basiswaarden van het Deltaprogramma – solidariteit, flexibiliteit en duurzaamheid, enz.) bij elkaar op te tellen. 
+`,
+
+
 
 
 'proc12':
@@ -173,7 +244,8 @@ Op basis van de SEA van individuele maatregelen (stap 7) en reeds geconstrueerde
   <li>Een economisch kansrijk pakket met daarin alle maatregelen met een positief kosten-baten saldo voor DPZW fase 3.</li>
   <li>Een sociaal-maatschappelijk pakket met daarin de maatregelen voor DPZW fase 3 waarmee de DPZW-doelen met een zo hoog mogelijke MCA-totaalscore worden gehaald. </li>
 </ol>
-Deze maatregelpakketten omvatten een KZH-, DPIJ- en IRM-variant en zoetwatermaatregelen aangedragen door de zoetwaterregio’s en RWS.
+<br>
+Deze maatregelpakketten omvatten zoetwatermaatregelen waarvoor het DPZW aan zet is én zoetwatermaatregelen waarvoor het DPZW niet aan zet is (bijv. maatregelen t.b.v. een verandering van de afvoerverdeling bij laagwater via het Programma Integraal Riviermanagement).
 `,
 
 
@@ -181,32 +253,52 @@ Deze maatregelpakketten omvatten een KZH-, DPIJ- en IRM-variant en zoetwatermaat
 `
 <h2>Ontwikkelpadenkaarten en hoekpunten zoetwaterstrategie (OPK)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
-<p>Het gebruik van ontwikkelpadenkaarten zorgt ervoor dat adaptief deltamanagement een prominente rol speelt in de voorbereiding op DPZW fase 3. Met ontwikkelpadenkaarten wordt bij het maken van afwegingen over investeringen op de korte termijn steeds geredeneerd vanuit wat nodig is om Nederland op de middellange- en langetermijn weerbaar te laten zijn tegen zoetwatertekorten.</p>
-De ontwikkelpadenkaarten bieden inzicht in de manier(en) waarop het DPZW-hoofddoel gehaald kan worden: met welke strategie, tegen welke kosten, en met welke (sociaal-)maatschappelijke effecten en ruimtelijke consequenties. <p style='text-decoration:underline'>Daarmee vormen ze belangrijke input voor een mogelijke herijking van de voorkeursstrategie voor zoetwater en de DPZW-doelen in de Deltabeslissing Zoetwater.</p>
-<p>Meer specifiek geven de ontwikkelpadenkaarten inzicht in:</p>
+Met ontwikkelpadenkaarten worden de consequenties van verschillende langetermijnstrategieën inzichtelijk gemaakt. Het gebruik van ontwikkelpadenkaarten zorgt ervoor dat adaptief deltamanagement een prominente rol speelt in de voorbereiding op de 2de herijking van de Deltabeslissing Zoetwater en het Deltaplan Zoetwater 2028-2033. Met ontwikkelpadenkaarten wordt bij het maken van afwegingen over investeringen op de korte termijn steeds geredeneerd vanuit wat nodig is om Nederland op de middellange- en langetermijn weerbaar te laten zijn tegen zoetwatertekorten. 
 
+De ontwikkelpadenkaarten bieden inzicht in:
 <ol>
-  <li>Het maximale doelbereik van verschillende ontwikkelpaden.</li>
-  <li>De beperkingen in overstapmogelijkheden tussen deze paden (lock-in en lock-out).</li>
-  <li>Welke keuze kan tot wanneer worden uitgesteld rekening houdende met de doorlooptijd van een maatregel/transitie.</li>
-  <li>Welke maatregelen zijn no-regret (effectief in alle scenario’s).</li>
+  <li>Het maximale doelbereik van verschillende strategieën.</li>
+  <li>Met welke strategie, tegen welke kosten, en met welke (sociaal)maatschappelijke effecten en ruimtelijke consequenties de DPZW-doelen gehaald kunnen worden.</li>
+  <li>Welke maatregelen no-regret zijn (effectief in alle toekomstscenario’s).</li>
+  <li>Welke keuze tot wanneer uitgesteld kan worden rekening houdend met de doorlooptijd van een maatregel/transitie.</li>
 </ol>
-<p style='text-decoration:underline'>Daarmee bieden ontwikkelpadenkaarten de zoetwaterregio’s en Rijkswaterstaat informatie die richting geeft aan het trechteren van de lijst met mogelijke maatregelen naar een voorkeurspakket (stap 10).</p>
+
+<p style='text-decoration:underline'>Daarmee vormen de ontwikkelpadenkaarten belangrijke input voor de 2de herijking van de Deltabeslissing Zoetwater (DPZW-doelen en strategie) en bieden ze de zoetwaterregio’s en Rijkswaterstaat informatie die richting geeft aan het trechteren van de lijst met mogelijke maatregelen naar een voorkeurspakket (stap 10).</p>
 
 <h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
-<p>Het programmateam maakt ontwikkelpadenkaarten op basis van de kennis en ervaring opgedaan in de eerder uitgevoerde oefening (stap 0). De ontwikkelpadenkaarten worden opgesteld met behulp van twee complementaire methodes: forecasting en backcasting. Het systematisch voorwaarts verkennen van ontwikkelpaden vanuit de huidige situatie (forecasting) geeft inzicht in de rek van de huidige strategie, maar is voor zeer grote veranderingen ontoereikend omdat er veel nodig en mogelijk is. Denken vanuit een mogelijke toekomstige (eind)situatie (backcasting) biedt inzicht in wat (nu al) nodig is om een eventueel benodigde alternatieve strategie voor te bereiden en op te bouwen (overstappen naar een transitiepad). De combinatie van forecasting en backcasting resulteert in een zorgvuldige afweging van investeringen op de korte termijn om ook op de middellange en lange termijn het DPZW-hoofddoel te halen.</p>
-<p>Het programmateam stelt in samenspraak met de zoetwaterregio’s en RWS een landelijke ontwikkelpadenkaart alsmede een ontwikkelpadenkaart per zoetwaterregio op (dit behoeft één of meerdere iteraties). Het behalen van het DPZW-hoofddoel is een samenspel tussen DPZW-maatregelen, keuzes in ruimtelijke programma’s en keuzes m.b.t. de grote stuurknoppen in het HWS. De ontwikkelpaden omvatten dan ook maatregelen uit de bijbehorende programma’s (o.a. NPLG, DPIJ, DPRD en IRM). Het programmateam gebruikt bij het opstellen van de ontwikkelpadenkaarten uitkomsten van de KPA (stap 1), de gevalideerde kosten en effecten van mogelijke maatregelen (stap 6), en uitkomsten van bijv. analyses uitgevoerd door het Kennisprogramma Zeespiegelstijging. De verschillende ontwikkelpaden worden vergeleken op basis van de eerder vastgestelde beoordelingscriteria (zonder weging, stap 0).</p>
+
+<p style="color:#C00001">
+<strong>Hoekpunten, tussenproduct en eindproduct</strong>
+
+<br>
+<br>
+
+Het programmateam maakt ontwikkelpadenkaarten op basis van de kennis en ervaring opgedaan in de eerder uitgevoerde oefening (stap 0). De ontwikkelpadenkaarten worden opgesteld met behulp van twee complementaire methodes: forecasting en backcasting. Het systematisch voorwaarts verkennen van ontwikkelpaden vanuit de huidige situatie (forecasting) geeft inzicht in het handelingsperspectief in relatie tot de groeiende opgave (de push-factor), maar levert mogelijk een beperkt beeld op. Terugredeneren vanuit een gewenste toekomstige (eind)situatie (backcasting) biedt inzicht in wat (nu al) nodig is om een eventueel benodigde alternatieve strategie voor te bereiden en op te bouwen (overstappen naar een transitiepad; de pull-factor). De combinatie van forecasting en backcasting resulteert in een zorgvuldige afweging van investeringen op de korte termijn om ook op de middellange en lange termijn het DPZW-hoofddoel te halen.
+
+Het backcasten krijgt vorm via het schetsen van vier hoekpunten voor de lange termijn zoetwaterstrategie. Deze ‘houtkoolschetsen’ worden gemaakt voor het jaar 2100 (bij Deltascenario Stoom) en geven een eerste beeld van mogelijke alternatieve strategieën. Dit biedt de basis voor het uitwerken van bijbehorende transitiepaden. De hoekpunten zijn:
+</p>
+
+<ol style="color:#C00001">
+  <li>Beheersen: het wateraanbod met infrastructurele ingrepen vergroten;,</li>
+  <li>Aanpassen: de watervraag verminderen en aanpassen aan verzilting;,</li>
+  <li>Behouden: de huidige voorkeursstrategie zo lang mogelijk doorzetten;,</li>
+  <li>Verdelen: meer water vanuit de Rijn naar regio Noord ofwel regio West sturen (dit zijn dus twee varianten).,</li>
+</ol>
+
+<p style="color:#C00001">
+Het forecasten krijgt vorm via het in samenspraak opstellen van ontwikkelpadenkaarten door het programmateam, de zoetwaterregio’s en RWS (een landelijke kaart en een kaart per zoetwaterregio). Met een of meerdere iteratieslagen wordt de wisselwerking tussen landelijke en regionale strategieën meegenomen. Het behalen van het DPZW-hoofddoel is een samenspel tussen DPZW-maatregelen, keuzes in ruimtelijke programma’s en keuzes m.b.t. de grote stuurknoppen in het HWS. De ontwikkelpaden omvatten dan ook maatregelen uit de bijbehorende programma’s (o.a. NPLG, DPIJ, DPRD en IRM). Het programmateam gebruikt bij het opstellen van de ontwikkelpadenkaarten uitkomsten van de KPA (stap 1), de gevalideerde kosten en effecten van mogelijke maatregelen (stap 6), en uitkomsten van bijv. analyses uitgevoerd door het Kennisprogramma Zeespiegelstijging. De verschillende ontwikkelpaden worden vergeleken op basis van de eerder vastgestelde beoordelingscriteria (zonder weging, stap 0). 
+</p>
 `,
 
 
 'proc14':
 `
-<h2>Voorkeurspakket met ontwikkelpadenkaart (VP)</h2>
+<h2>Voorkeurspakket met ontwikkelpadenkaart (VP-concept en VP)</h2>
 <h3 style='color:rgb(39, 77, 141)'>Doel</h3>
-Het voorkeursmaatregelpakket voor DPZW fase 3 bevat alle zoetwatermaatregelen waarvoor een zoetwaterregio of RWS een bijdrage uit het Deltafonds vraagt. Het voorkeursmaatregelpakket op de korte termijn moet passen binnen een strategie waarmee Nederland ook op de middellange en lange termijn weerbaar is tegen zoetwatertekorten. Daarom is een onderbouwende ontwikkelpadenkaart onderdeel van deze stap.
+Het voorkeursmaatregelpakket voor DPZW fase 3 omvat alle zoetwatermaatregelen waarvoor een zoetwaterregio of RWS een bijdrage uit het Deltafonds vraagt. Het voorkeursmaatregelpakket op de korte termijn moet passen binnen een strategie waarmee Nederland ook op de middellange en lange termijn weerbaar is tegen zoetwatertekorten. Daarom is een onderbouwende ontwikkelpadenkaart onderdeel van deze stap.
 
 <h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
-Alle zoetwaterregio’s en Rijkswaterstaat stellen een voorkeursmaatregelpakket voor DPZW fase 3 en een bijbehorende ontwikkelpadenkaart samen. Indien een of meerdere korte termijn maatregelen uit het voorkeurspakket niet in de samengestelde beleidsalternatieven (stap 8) zitten, dan is voor deze maatregelen extra onderbouwing nodig.
+Alle zoetwaterregio’s en Rijkswaterstaat stellen een voorkeursmaatregelpakket voor DPZW fase 3 en een bijbehorende ontwikkelpadenkaart op. Indien een korte termijn maatregelen uit het voorkeurspakket niet in een van de beleidsalternatieven (stap 8) zit, dan is voor de desbetreffende maatregel extra onderbouwing nodig. 
 `,
 
 'proc15':
@@ -216,7 +308,7 @@ Alle zoetwaterregio’s en Rijkswaterstaat stellen een voorkeursmaatregelpakket 
 De SEA van maatregelpakketten ondersteunt de zoetwaterregio’s en RWS bij het zo goed mogelijk onderbouwen van het voorkeurspakket voor DPZW fase 3. Deze onderbouwing is vereist ter verantwoording van uitgaven uit het Deltafonds.
 
 <h3 style='color:rgb(39, 77, 141)'>Aanpak</h3> 
-Het programmateam vergelijkt het effect van het voorkeurspakket met het effect van het nulalternatief en de drie beleidsalternatieven aan de hand van de daarvoor geldende richtlijnen. Daartoe worden voor ieder pakket het doelbereik, de kosten, de effecten op zoetwater gebruiksfuncties en de score op de overige beoordelingscriteria (zonder weging, stap 0) in beeld gebracht. Het Centraal Planbureau (CPB) voorziet de SEA van een second opinion over de kwaliteit van de analyse.
+Het programmateam vergelijkt het effect van het voorkeurspakket  met het effect van het nulalternatief en de drie beleidsalternatieven aan de hand van de daarvoor geldende richtlijnen. Daartoe worden voor ieder pakket het doelbereik, de kosten, de effecten op zoetwater gebruiksfuncties en de score op de overige criteria uit het Vergelijkingsinstrument DPZW in beeld gebracht. Het Centraal Planbureau (CPB) voorziet de SEA van een second opinion over de kwaliteit van de analyse.
 `,
 }
 
